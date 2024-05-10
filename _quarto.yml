@@ -1,0 +1,24 @@
+project:
+  type: website
+
+website:
+  title: "2024 DSAN Scholarship"
+  navbar:
+    left:
+      - href: index.ipynb
+        text: Home
+      - href: clustering/clustering.qmd
+        text: Clustering
+      - href: eda/eda.ipynb
+        text: Data Exploration
+    
+    tools:
+      - icon: github
+        url: https://github.com/hannah-hana-kim/SCHOLARSHIP
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+
+
