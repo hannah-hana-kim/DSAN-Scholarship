@@ -15,6 +15,9 @@ website:
     tools:
       - icon: github
         url: https://github.com/hannah-hana-kim/SCHOLARSHIP
+
+    favicon: hannah_kim_free_logo.png
+  
 format:
   html:
     theme: cosmo
