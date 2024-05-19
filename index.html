@@ -1,15 +1,120 @@
-<html>
 <head>
-    <title>Analysis on Natural Bridges National Park</title>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="script.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="./images/nature.png" type="image/x-icon">
+  <title>Analysis on _____ at Natural Bridges National Park</title>
 </head>
+
 <body>
+  <nav class = "navbar">
+    <div class="container">
+      <div class = "logo">
+        <img src="./images/nature.png" alt="Nature" />
+      </div>
+      <div class = "navbar_links">
+        <a href = "#">Home</a>
+        <a href = "#">Data Analysis</a>
+        <a href = "#">Code Implementation</a>
+        <a href = "#">Reference</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="title_section">
+      <h1>Analysis on _____ at Natural Bridges National Park</h1>
+    </div>
+    <div class="first_section">
+      <div class="first_section_left">
+        <img src="./images/nature.png" alt="Nature" />
+      </div>
+      <div class="first_section_right">
+        Please open this website on a Safari browser for the best experience.
+      </div>
+    </div>
+
+    <div class="vertical_section">
+      <div class="sub_section_top">
+        <div class = "map_1">
+          <iframe src="./maps/greenery_map_1980.html"></iframe>
+        </div>
+        <div class = "map_2">
+          <iframe src="./maps/greenery_map_2018.html"></iframe>
+        </div>
+        <div class = "map_3">
+          <iframe src="./maps/greenery_map_2024.html"></iframe>
+        </div>
+      </div>
+      <div class="sub_section_bottom">These are map plots</div>
+    </div>
 
 
-
+    <div class="vertical_section">
+      <div class="sub_section_top">
+        <figure class="highcharts-figure">
+          <div id="scatterplot"></div>
+          <p class="highcharts-description">
+          </p>
+        </figure>
+      </div>
+      <div class="sub_section_bottom">
+        This is scatter plot with regression line. This is where you add your text for analysis. My name is Hannah. If you
+        keep going it'll show you something that you need to see.
+      </div>
+    </div>
+    <div class="vertical_section">
+      <div class="sub_section_top">
+        <figure class="highcharts-figure">
+          <div id="barchart"></div>
+          <p class="highcharts-description">
+          </p>
+        </figure>
+      </div>
+      <div class="sub_section_bottom">This is bar chart</div>
+    </div>
+    <div class="vertical_section">
+      <div class="sub_section_top">
+        <figure class="highcharts-figure">
+          <div id="linechart"></div>
+          <p class="highcharts-description">
+          </p>
+      </figure>
+      </div>
+      <div class="sub_section_bottom">
+        This is line chart.
+      </div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">A</div>
+      <div class="sub_section_right">B</div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">A</div>
+      <div class="sub_section_right">B</div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">A</div>
+      <div class="sub_section_right">B</div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">
+        <div class="flourish-embed flourish-radar" data-src="visualisation/17966848"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </div>
+      <div class="sub_section_right">This is Flourish chart</div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">A</div>
+      <div class="sub_section_right">B</div>
+    </div>
+  </main>
 </body>
-</html>
