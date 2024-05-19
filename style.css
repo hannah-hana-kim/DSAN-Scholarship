@@ -12,11 +12,11 @@ html {
   --title_bg_color: #ffffff;
   --first_bg_color: #ffffff;
   --bg_color: #22da72;
-  --nav_bar_color: #d5fc86;
+  --nav_bar_color: #a2ad59;
   --text_size: 1.6rem;
   --title_text_size: 3.2rem;
   --header_text_size: 2.4rem;
-  --border_color: #8FCB9B;
+  --border_color: #a2ad59;
   --left_sub_section_bg_color: #ffffff;
   --right_sub_section_bg_color: #ffffff;
   --margin_left: 10rem;
@@ -161,7 +161,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   padding-left: 10%;
-  padding-right: 10%
+  padding-right: 10%;
 }
 
 /* --------------------- Figures --------------------- */
@@ -553,3 +553,13 @@ body {
   display: none;
 }
 
+.flourish-embed {
+  width: 100%;
+  height: 100%;
+}
+
+.flourish-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
