@@ -37,6 +37,7 @@
       <h1>Analysis of Natural Bridges National Park</h1>
       <p>
         Introduction: This website is created to analyze the data of Natural Bridges National Park. The data includes the greenery area, plant litter, volumetric water content, and summer indicators. The data is collected from 1980 to 2018, and the organization predicted the data from 2021 to 2024. The data is visualized by using Highcharts and Flourish.
+        This report also looks into the vegetation area, the volumetric water content, and the summer indicators. For the sake of the analysis flow, I focused only on the summer data. 
       </p>
     </div>
 
@@ -49,8 +50,8 @@
       </div>
     </div>
 
-    <div class="vertical_section">
-      <div class="sub_section_top">
+    <div class="vertical_map_section">
+      <div class="sub_section_map_top">
         <div class = "map_1">
           <div class = "map_1980">
             <iframe src="./maps/greenery_map_1980.html"></iframe>  
@@ -77,7 +78,7 @@
         </div>
       </div>
 
-      <div class="sub_section_bottom">
+      <div class="sub_section_map_bottom">
         <h4>Vegetation Status at Natural Bridge National Park</h4>
         <p>
           Figure 1.1 and Figure 1.2 are the maps that shows the greenery area at Natural Bridge National Part in 1980 and 2018 respectively. The greenery area in the northeast part of the park  had been increased, whereas that of the middle, southern part had been decreased, although it is a slight difference. <br>
@@ -90,18 +91,12 @@
 
     <div class="vertical_section">
       <div class="sub_section_top">
-        <div class="figure-2">
-          <div class="scatterplot">
-            <figure class="highcharts-figure">
-              <div id="scatterplot"></div>
-              <p class="highcharts-description">
-              </p>
-            </figure>
-          </div>
-          <div class="text">
+        <figure class="highcharts-figure">
+          <div id="scatterplot"></div>
+          <p class="highcharts-description" align="center">
             [Figure 2]
-          </div>
-        </div>
+          </p>
+        </figure>
       </div>
       <div class="sub_section_bottom">
         <h4>Plant Litter Status at Natural Bridge National Park</h4>
@@ -118,23 +113,22 @@
 
     <div class="vertical_section">
       <div class="sub_section_top">
-        <div class="figure-3">
-          <div class="barplot">
-            <figure class="highcharts-figure">
-              <div id="barchart"></div>
-              <p class="highcharts-description">
-              </p>
-            </figure>
-          </div>
-          <div class="text">
+        <figure class="highcharts-figure">
+          <div id="barchart"></div>
+          <p class="highcharts-description" align="center">
             [Figure 3]
-          </div>
-        </div>
+          </p>
+        </figure>
       </div>
       <div class="sub_section_bottom">
         <h4>Volumetric Water Content by Season</h4>
         <p>
-          I wanted to see the volumetric water content by season. 
+          After deep-diving into the vegetation of the area, I wanted to check out the volumetric water content of the area. This bar chart shows the volumetric water content by season. <br>
+          The volumetric water content(VWC) is the amount of water in a given volume of soil. <br>
+          Assuming that the evaporation rate is high in the summer, the VWC value was the lowest in the summer and the highest in the water as shown in the plot. <br>
+          
+          Interestingly, I initially thought that the VWC would be lower in the predicted data, both on RCP 4.5 and RCP 8.5, but the data shows that the VWC will be higher that the past. This also aligns with the first three map plots, where the vegetation area will be increased (in some parts). 
+        
         </p>
       </div>
     </div>
@@ -150,7 +144,11 @@
       </div>
       <div class="sub_section_bottom">
         <h4>Relationship of the Summer Indicators</h4>
-        <p>This is line chart</p>
+        <p>
+          After taking a look at the volumetric water content value, I wanted to deep-dive into the summer data. The data gives some indicators of the summer such as number of days of dry soil, evaporation rate, precipitation rate, etc. <br>
+          In this graph, I focused on the trend of the three indicators: Number of days of dry soil, Evaporation rate, Precipitation rate. The data has been normalized since the unit of the indicators were different. From this graph, we can see that the evaporation and precipitation trend were similar, whereas the number of days of dry soil was the opposite. <br>
+          From this graph, we can learn that the more days of dry soil, the less the evaporation rate and precipitation rate. 
+       </p>
       </div>
     </div>
 
@@ -164,38 +162,54 @@
           </p>
         </figure>
       </div>
-      <div class="sub_section_right">This is Highchart Radar chart.</div>
+      <div class="sub_section_right">
+        This is Highchart Radar chart. I don't know why the grid line is not showing. Now, I wanted to zoom out a little bit, and see the relationships among the five indicators including the three indicators above by radar chart. This graph also includes the historical baseline data and the predicted data. In 1981, it had high precipitation. However, due to high temperature, the evaporation rate was also high. I assume the low non-dry soil water availability due to the high rate of evaporation, but interestingly, the number of days of dry soil was also low. <br>
+        In 2018, the number of days of dry soil was high although it had relatively low temperature and low evaporation rate. It seems like precipitation has the biggest impact on the number of days of dry soil. <br>
+        In 2024, which is predicted data, has the highest maximum temperature, low precipitation and evaporation, which also leads to low number of days of dry soil. 
+        
+        Interestingly, the VWC value was all close to 0. By this graph, we can see the relationship of the five indicators. 
+       </div>
     </div>
+
+
     <div class="section">
       <div class="sub_section_left">
-        <div class="flourish-embed flourish-radar" data-src="visualisation/17966848"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        <div class="flourish-embed flourish-radar" data-src="visualisation/17966848">
+          <script src="https://public.flourish.studio/resources/embed.js">
+          </script>
+        </div>
       </div>
       <div class="sub_section_right">This is Flourish chart</div>
     </div>
-    <div class="section">
-      <div class="sub_section_left">
-        <div class="figure-7">
+
+
+    <div class="vertical_map_section">
+      <div class="sub_section_map_top">
+        <div class = "map_1">
           <figure class="highcharts-figure">
             <div id="vegetation-heatmap"></div>
-            <p class="highcharts-description">
+            <p class="highcharts-description" align="center">
+              [Figure 8.1]
             </p>
-        </figure>
+          </figure>
+        </div>
+        <div class = "map_2">
+          <figure class="highcharts-figure">
+            <div id="summer-heatmap"></div>
+            <p class="highcharts-description" align="center">
+              [Figure 8.2]
+            </p>
+          </figure>
         </div>
       </div>
-      <div class="sub_section_right">This is the vegetation heatmap</div>
-    </div>
-    <div class="section">
-      <div class="sub_section_left">
-        <figure class="highcharts-figure">
-          <div id="summer-heatmap"></div>
-          <p class="highcharts-description">
-          </p>
-      </figure>
-      </div>
-      <div class="sub_section_right">
-        This is the summer heatmap
+      <div class="sub_section_map_bottom">
+        <h4>Data Prediction</h4>
+        <p>
+          I wondered if we can predict the data based on the previous analysis. I wanted to see how better or worse will the climate will change. Unfortunately, the vegetation data and the summer indicators had no correlation with RCP 
+        </p> 
       </div>
     </div>
+
     <div class="section">
       <div class="sub_section_left">Image</div>
       <div class="sub_section_right">Conclusion</div>
