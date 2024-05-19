@@ -402,3 +402,217 @@ Highcharts.chart('radar_chart', {
     }
 
 });
+
+// Vegetation Heatmap
+
+// Substring template helper for the responsive labels
+Highcharts.Templating.helpers.substr = (s, from, length) =>
+    s.substr(from, length);
+
+// Create the chart
+Highcharts.chart('vegetation-heatmap', {
+
+    chart: {
+        type: 'heatmap',
+        marginTop: 40,
+        marginBottom: 80,
+        plotBorderWidth: 1,
+        backgroundColor: 'transparent',
+    },
+
+    title: {
+        text: 'Correlation among the Vegetation Indicators',
+        style: {
+            fontSize: '1em'
+        }
+    },
+
+    xAxis: {
+        categories: ['Longitude', 'Latitude', 'Year', 'RCP', 'Tree Canopy', 'Bare', 'Herb', 'Annual Herb', 'Litter', 'Shrub'],
+        title: {
+            text: 'Indicators of Summer'
+        }
+    },
+
+    yAxis: {
+        categories: ['Longitude', 'Latitude', 'Year', 'RCP', 'Tree Canopy', 'Bare', 'Herb', 'Annual Herb', 'Litter', 'Shrub'],
+        title: {
+            text: 'Indicators of Summer'
+        },
+        reversed: true
+    },
+
+    accessibility: {
+        point: {
+            descriptionFormat: '{(add index 1)}. ' +
+                '{series.xAxis.categories.(x)} sales ' +
+                '{series.yAxis.categories.(y)}, {value}.'
+        }
+    },
+
+    colorAxis: {
+        min: -1,
+        reversed: false,
+        // stops: [
+            //[0, '#CA68C8'], // Red
+            //[0.5, '#FFFFFF'], // White at neutral point
+            //[1, '#A2AD59']  // Green
+        //]
+        minColor: '#FFFFFF',
+        maxColor: '#A2AD59'
+    },
+
+    legend: {
+        align: 'right',
+        layout: 'vertical',
+        margin: 0,
+        verticalAlign: 'top',
+        y: 25,
+        symbolHeight: 280
+    },
+
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b><br>' +
+                   '<b>' + this.series.yAxis.categories[this.point.y] + '</b><br>' +
+                   '<b>' + this.point.value.toFixed(3) + '</b><br>';
+        }
+    },
+
+    series: [{
+        name: 'Correlation matrix',
+        borderWidth: 1,
+        data: [
+            [0, 0, 1.000], [0, 1, 0.518], [0, 2, -0.010], [0, 3, 0.209], [0, 4, 0.168], [0, 5, -0.289], [0, 6, 0.087], [0, 7, 0.036], [0, 8, 0.296], [0, 9, 0.221],
+            [1, 0, 0.518], [1, 1, 1.000], [1, 2, -0.007], [1, 3, 0.105], [1, 4, -0.092], [1, 5, -0.133], [1, 6, -0.032], [1, 7, 0.041], [1, 8, 0.274], [1, 9, 0.072],
+            [2, 0, -0.010], [2, 1, -0.007], [2, 2, 1.000], [2, 3, 0.626], [2, 4, -0.013], [2, 5, 0.011], [2, 6, -0.006], [2, 7, -0.003], [2, 8, -0.003], [2, 9, -0.007],
+            [3, 0, 0.209], [3, 1, 0.105], [3, 2, 0.626], [3, 3, 1.000], [3, 4, 0.020], [3, 5, -0.035], [3, 6, 0.011], [3, 7, -0.028], [3, 8, 0.039], [3, 9, 0.026],
+            [4, 0, 0.168], [4, 1, -0.092], [4, 2, -0.013], [4, 3, 0.020], [4, 4, 1.000], [4, 5, -0.403], [4, 6, 0.303], [4, 7, -0.138], [4, 8, 0.146], [4, 9, 0.396],
+            [5, 0, -0.289], [5, 1, -0.133], [5, 2, 0.011], [5, 3, -0.035], [5, 4, -0.403], [5, 5, 1.000], [5, 6, -0.696], [5, 7, -0.276], [5, 8, -0.836], [5, 9, -0.915],
+            [6, 0, 0.087], [6, 1, -0.032], [6, 2, -0.006], [6, 3, 0.011], [6, 4, 0.303], [6, 5, -0.696], [6, 6, 1.000], [6, 7, 0.186], [6, 8, 0.485], [6, 9, 0.617],
+            [7, 0, 0.036], [7, 1, 0.041], [7, 2, -0.003], [7, 3, -0.028], [7, 4, -0.138], [7, 5, -0.276], [7, 6, 0.186], [7, 7, 1.000], [7, 8, 0.279], [7, 9, 0.336],
+            [8, 0, 0.296], [8, 1, 0.274], [8, 2, -0.003], [8, 3, 0.039], [8, 4, 0.146], [8, 5, -0.836], [8, 6, 0.485], [8, 7, 0.279], [8, 8, 1.000], [8, 9, 0.803],
+            [9, 0, 0.221], [9, 1, 0.072], [9, 2, -0.007], [9, 3, 0.026], [9, 4, 0.396], [9, 5, -0.915], [9, 6, 0.617], [9, 7, 0.336], [9, 8, 0.803], [9, 9, 1.000]
+        ],
+        dataLabels: {
+            enabled: true,
+            color: '#000000'
+        }
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                yAxis: {
+                    labels: {
+                        format: '{substr value 0 1}'
+                    }
+                }
+            }
+        }]
+    }
+
+});
+
+// Summer Heatmap
+// Substring template helper for the responsive labels
+Highcharts.Templating.helpers.substr = (s, from, length) =>
+    s.substr(from, length);
+
+// Create the chart
+Highcharts.chart('summer-heatmap', {
+
+    chart: {
+        type: 'heatmap',
+        marginTop: 40,
+        marginBottom: 80,
+        plotBorderWidth: 1,
+        backgroundColor: 'transparent',
+    },
+
+
+    title: {
+        text: 'Correlation among the Summer Indicators',
+        style: {
+            fontSize: '1em'
+        }
+    },
+
+    xAxis: {
+        categories: [
+            'Year', 'Number of days with dry soil (<-3.9MPa)', 'Evaporation', 'Non Dry Soil Water Availability', 'Precipitation', 'Maxiumum temperature', 'Volumetric Water Content'],
+            title: 'Indicators of Summer'
+    },
+
+    yAxis: {
+        categories: ['Year', 'Number of days with dry soil (<-3.9MPa)', 'Evaporation', 'Non Dry Soil Water Availability', 'Precipitation', 'Maxiumum temperature', 'Volumetric Water Content'],
+        title: 'Indicators of Summer',
+        reversed: true
+    },
+
+    accessibility: {
+        point: {
+            descriptionFormat: '{(add index 1)}. ' +
+                '{series.xAxis.categories.(x)} sales ' +
+                '{series.yAxis.categories.(y)}, {value}.'
+        }
+    },
+
+    colorAxis: {
+        min: 0,
+        reversed: false,
+        minColor: '#FFFFFF',
+        maxColor: '#A2AD59'
+    },
+
+    legend: {
+        align: 'right',
+        layout: 'vertical',
+        margin: 0,
+        verticalAlign: 'top',
+        y: 25,
+        symbolHeight: 280
+    },
+
+    tooltip: {
+        format: '<b>{series.xAxis.categories.(point.x)}</b><br>' +
+            '<b>{series.yAxis.categories.(point.y)}</b><br>' +
+						'<b>{point.value}</b><br>'
+    },
+
+    series: [{
+        name: 'Sales per employee',
+        borderWidth: 1,
+        data: [
+            [0, 0, 1], [0, 1, 0.059], [0, 2, -0.213], [0, 3, 0.033], [0, 4, -0.084], [0, 5, 0.346], [0, 6, 0.033],
+            [1, 0, 0.059], [1, 1, 1], [1, 2, -0.657], [1, 3, -0.698], [1, 4, -0.732],[1, 5, 0.150], [1, 6, -0.727],
+            [2, 0, -0.213], [2, 1, -0.657], [2, 2, 1], [2, 3, 0.461], [2, 4, 0.9], [2, 5, -0.310], [2, 6, 0.578],
+            [3, 0, 0.033], [3, 1, -0.698], [3, 2, 0.461], [3, 3, 1], [3, 4, 0.706], [3, 5, -0.144], [3, 6, 0.976],
+            [4, 0, 0.346], [4, 1, 0.15], [4, 2, -0.31], [4, 3, -0.144], [4, 4, -0.263],[4, 5, 1],[4, 6, -0.188],
+          [5, 0, 0.033], [5, 1, -0.727], [5, 2, 0.578], [5, 3, 0.976], [5, 4, 0.808], [5, 5, -0.188], [5, 6, 1]
+        ],
+        dataLabels: {
+            enabled: true,
+            color: '#000000'
+        }
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                yAxis: {
+                    labels: {
+                        format: '{substr value 0 1}'
+                    }
+                }
+            }
+        }]
+    }
+
+});

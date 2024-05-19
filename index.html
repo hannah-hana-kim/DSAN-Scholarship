@@ -3,6 +3,7 @@
   <script defer src="script.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/heatmap.js"></script>
   <script src="https://code.highcharts.com/modules/series-label.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -24,7 +25,7 @@
       <div class = "navbar_links">
         <a href = "#">Home</a>
         <a href = "#">Data Analysis</a>
-        <a href = "#">Code Implementation</a>
+        <a href = "#">Code</a>
         <a href = "#">Reference</a>
       </div>
     </div>
@@ -36,7 +37,7 @@
     </div>
     <div class="first_section">
       <div class="first_section_left">
-        <img src="./images/browser-use-warning.gif" alt="Rapunzel Falling" />
+        <img src="./images/browser-use-warning.gif" alt="Rapunzel Falling" class="styled-gif"/>
       </div>
       <div class="first_section_right">
         Please open this website on a Safari browser for the best experience.
@@ -44,6 +45,7 @@
     </div>
 
     <div class="vertical_section">
+      <h3>Vegetation Status at Natural Bridge National Park</h3>
       <div class="sub_section_top">
         <div class = "map_1">
           <div class = "map_1980">
@@ -85,12 +87,20 @@
 
 
     <div class="vertical_section">
+      <h3>Plant Litter Status at Natural Bridge National Park</h3>
       <div class="sub_section_top">
-        <figure class="highcharts-figure">
-          <div id="scatterplot"></div>
-          <p class="highcharts-description">
-          </p>
-        </figure>
+        <div class="figure-2">
+          <div class="scatterplot">
+            <figure class="highcharts-figure">
+              <div id="scatterplot"></div>
+              <p class="highcharts-description">
+              </p>
+            </figure>
+          </div>
+          <div class="text">
+            [Figure 2]
+          </div>
+        </div>
       </div>
       <div class="sub_section_bottom">
         <p>
@@ -105,42 +115,56 @@
       </div>
     </div>
     <div class="vertical_section">
+      <h3>Volumetric Water Content by Season</h3>
       <div class="sub_section_top">
-        <figure class="highcharts-figure">
-          <div id="barchart"></div>
-          <p class="highcharts-description">
-          </p>
-        </figure>
+        <div class="figure-3">
+          <div class="barplot">
+            <figure class="highcharts-figure">
+              <div id="barchart"></div>
+              <p class="highcharts-description">
+              </p>
+            </figure>
+          </div>
+          <div class="text">
+            [Figure 3]
+          </div>
+        </div>
       </div>
       <div class="sub_section_bottom">This is bar chart</div>
     </div>
     <div class="vertical_section">
       <div class="sub_section_top">
-        <figure class="highcharts-figure">
-          <div id="linechart"></div>
-          <p class="highcharts-description">
-          </p>
-      </figure>
+        <div class="figure-4">
+          <div class="lineplot">
+            <figure class="highcharts-figure">
+              <div id="linechart"></div>
+              <p class="highcharts-description">
+              </p>
+            </figure>
+          </div>
+          <div class="text">
+            [Figure 4]
+          </div>
+        </div>
       </div>
       <div class="sub_section_bottom">
         This is line chart.
       </div>
     </div>
     <div class="section">
-      <div class="sub_section_left">A</div>
-      <div class="sub_section_right">B</div>
-    </div>
-    <div class="section">
-      <div class="sub_section_left">A</div>
-      <div class="sub_section_right">B</div>
-    </div>
-    <div class="section">
       <div class="sub_section_left">
-        <figure class="highcharts-figure">
-          <div id="radar_chart"></div>
-          <p class="highcharts-description">
-          </p>
-      </figure>
+        <div class="figure-5">
+          <div class="radarplot">
+            <figure class="highcharts-figure">
+              <div id="radar_chart"></div>
+              <p class="highcharts-description">
+              </p>
+            </figure>
+          </div>
+          <div class="text">
+            [Figure 5]
+          </div>
+        </div>
       </div>
       <div class="sub_section_right">This is Highchart Radar chart.</div>
     </div>
@@ -149,6 +173,30 @@
         <div class="flourish-embed flourish-radar" data-src="visualisation/17966848"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
       </div>
       <div class="sub_section_right">This is Flourish chart</div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">
+        <div class="figure-7">
+          <figure class="highcharts-figure">
+            <div id="vegetation-heatmap"></div>
+            <p class="highcharts-description">
+            </p>
+        </figure>
+        </div>
+      </div>
+      <div class="sub_section_right">This is the vegetation heatmap</div>
+    </div>
+    <div class="section">
+      <div class="sub_section_left">
+        <figure class="highcharts-figure">
+          <div id="summer-heatmap"></div>
+          <p class="highcharts-description">
+          </p>
+      </figure>
+      </div>
+      <div class="sub_section_right">
+        This is the summer heatmap
+      </div>
     </div>
     <div class="section">
       <div class="sub_section_left">Image</div>
