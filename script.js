@@ -1,3 +1,23 @@
+// variables
+const title_font_size = '2.2em';
+const subtitle_font_size = '1.8em';
+const axis_label_font_size = '1.5em';
+const axis_tick_label_font_size = '1.3em';
+const legend_item_font_size = '1.3em';
+const tooltip_font_size = '1.3em';
+
+const scatters_color = '#eda4bd';
+const line_color = '#7d1128';
+const bar_historical_color = '#6B7FD7';
+const bar_4_5_color = '#eb7bc0';
+const bar_8_5_color = '#4c2a85';
+const dry_soil_color = '#E0BF00';
+const evaporation_color = '#7d1128';
+const precipitation_color = '#6b7fd7';
+const color_1980 = '#6b7fd7';
+const color_2018 = '#eb7bc0';
+const color_2024 = '#4c2a85';
+
 // Scatterplot with regression line
 const dataset = [
 	    [1, 11.700],
@@ -68,40 +88,74 @@ Highcharts.chart('scatterplot', {
       backgroundColor: 'transparent',
     },
     title: {
-        text: 'Relationship between the Plant Litter and Annual Temperature'
+        text: 'Relationship between the Plant Litter and Annual Temperature',
+        align: 'left',
+        style: {
+            fontSize: title_font_size,
+        }
     },
     xAxis: {
         min: 0,
         max: 30,
         title: {
-        	text: 'Plant Litter (%)'
+        	text: 'Plant Litter (%)',
+            style: {
+                fontSize: axis_label_font_size,
+            }
+        },
+        labels: {
+            style: {
+                fontSize: axis_tick_label_font_size,
+            }
         }
     },
     yAxis: {
         min: 10,
         title: {
-        	text: 'Annual Temperature (Celsius)'
+        	text: 'Annual Temperature (°C)',
+            style: {
+                fontSize: axis_label_font_size,
+            }
+        },
+        labels: {
+            style: {
+                fontSize: axis_tick_label_font_size,
+            }
+        }
+    },
+    legend: {
+        itemStyle: {
+            fontSize: legend_item_font_size,
+        }
+    },
+    tooltip: {
+        style: {
+            fontSize: tooltip_font_size,
+        },
+        formatter: function() {
+            return '<b>Annual Temperature:</b> ' + this.y + '°C<br>' +
+                   '<b>Plant Litter:</b> ' + this.x + '%';
         }
     },
     series: [{
         type: 'line',
         name: 'Trend Line',
         data: getTrendLine(dataset),
-        color: '#A2AD59',
+        color: line_color,
         marker: {
             enabled: false
         },
         states: {
             hover: {
-                lineWidth: 0
+                lineWidth: 2
             }
         },
         enableMouseTracking: false
     }, {
         type: 'scatter',
-        name: 'Observations',
+        name: 'Plant Litter',
         data: dataset,
-        color: '#C1AE9F', 
+        color: scatters_color, 
         marker: {
             radius: 4,
             symbol: 'circle'
@@ -117,12 +171,24 @@ Highcharts.chart('barchart', {
       backgroundColor: 'transparent',
   },
   title: {
-      text: 'Soil Water Content by Season and RCP'
+      text: 'Volumetric Water Content by Season and RCP',
+      align: 'left',
+        style: {
+            fontSize: title_font_size,
+        }
   },
   xAxis: {
       categories: ['Spring', 'Summer', 'Fall', 'Winter'],
       title: {
-          text: 'Season'
+          text: 'Season',
+          style: {
+            fontSize: axis_label_font_size,
+          }
+      },
+      labels: {
+        style: {
+            fontSize: axis_tick_label_font_size,
+        }
       },
       gridLineWidth: 1,
       lineWidth: 0
@@ -130,11 +196,16 @@ Highcharts.chart('barchart', {
   yAxis: {
       min: 0,
       title: {
-          text: 'Volumetric Water Content (VWC)',
-          align: 'high'
+        text: 'Volumetric Water Content (VWC)',
+        style: {
+            fontSize: axis_label_font_size,
+        }
       },
       labels: {
-          overflow: 'justify'
+        overflow: 'justify',
+        style: {
+            fontSize: axis_tick_label_font_size,
+        }
       },
       gridLineWidth: 0
   },
@@ -151,32 +222,35 @@ Highcharts.chart('barchart', {
       }
   },
   legend: {
-      layout: 'vertical',
-      align: 'right',
-      verticalAlign: 'top',
-      x: -5,
-      y: 20,
-      floating: true,
-      borderWidth: 1,
-      backgroundColor:
-          Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-      shadow: true
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'top',
+    x: -1,
+    y: 20,
+    floating: true,
+    borderWidth: 1,
+    backgroundColor:
+        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+    shadow: true,
+    itemStyle: {
+        fontSize: legend_item_font_size,
+    }
   },
   credits: {
       enabled: false
   },
   series: [{
-      name: 'Historical',
-      data: [0.111, 0.068, 0.094, 0.125],
-    color: '#A2AD59'
+    name: 'Historical',
+    data: [0.111, 0.068, 0.094, 0.125],
+    color: bar_historical_color
   }, {
       name: 'RCP 4.5',
       data: [0.118, 0.073, 0.099, 0.132],
-    color: '#C1AE9F'
+    color: bar_4_5_color
   }, {
       name: 'RCP 8.5',
       data: [0.119, 0.073, 0.099, 0.133], 
-    color: '#D3BDB0'
+    color: bar_8_5_color
   }]
 });
 
@@ -243,32 +317,64 @@ Highcharts.chart('linechart', {
       backgroundColor: 'transparent',
   },
   title: {
-      text: 'Relationship the Summer Indicators',
-      align: 'center'
+    text: 'Relationship the Summer Indicators',
+    align: 'left',
+    style: {
+        fontSize: title_font_size,
+    }
   },
   subtitle: {
-      text: 'Days of Dry Soil vs. Evaporation vs. Precipitation',
-      align: 'center'
+    text: 'Days of Dry Soil vs. Evaporation vs. Precipitation',
+    align: 'left',
+    style: {
+        fontSize: subtitle_font_size,
+    }
   },
   xAxis: {
       title: {
-          text: 'Year'
+        text: 'Year',
+        style: {
+            fontSize: axis_label_font_size,
+        }
       },
       categories: data.map(item => item[0].toString()), // Use year as categories
       labels: {
           overflow: 'justify'
+      },
+      labels: {
+        style: {
+            fontSize: axis_tick_label_font_size,
+        }
       }
+
   },
   yAxis: {
       title: {
-          text: 'Normalized Value'
+        text: 'Normalized Value of the Indicators',
+        style: {
+            fontSize: axis_label_font_size,
+        }
+      },
+      labels: {
+        style: {
+            fontSize: axis_tick_label_font_size,
+        }
       },
       minorGridLineWidth: 0,
       gridLineWidth: 0,
       alternateGridColor: null
   },
+
+  legend: {
+    itemStyle: {
+        fontSize: legend_item_font_size,
+    },
+  },
   tooltip: {
-      valueSuffix: ''
+    valueSuffix: '',
+    style: {
+        fontSize: tooltip_font_size,
+    }
   },
   plotOptions: {
       spline: {
@@ -286,20 +392,20 @@ Highcharts.chart('linechart', {
   series: [{
       name: 'Days of Dry Soil',
       data: drySoilDays,
-      color: '#A2AD59'
+      color: dry_soil_color
 
   }, {
       name: 'Evaporation (cm)',
       data: evaporation,
-      color: '#C1AE9F'
+      color: evaporation_color
   }, {
       name: 'Precipitation (cm)',
       data: precipitation,
-      color: '#D3BDB0'
+      color: precipitation_color
   }],
   navigation: {
       menuItemStyle: {
-          fontSize: '10px'
+          fontSize: '15px'
       }
   }
 });
@@ -314,8 +420,19 @@ Highcharts.chart('radar_chart', {
     }, 
 
     title: {
-        text: 'Indicators of the Summer',
-        x: -80
+        text: 'Comparisons of the Indicators of the Summer',
+        align: 'left',
+        style: {
+            fontSize: title_font_size,
+        }
+    },
+
+    subtitle: {
+        text: 'Number of Days of Dry Soil vs. Evaporation vs. Non-Dry Soil Water Availability vs. Precipitation vs. Maximum Temperature vs. Volumetric Water Content',
+        align: 'left',
+        style: {
+            fontSize: subtitle_font_size,
+        }
     },
 
     pane: {
@@ -327,7 +444,12 @@ Highcharts.chart('radar_chart', {
             'Number of Days of Dry Soil', 'Evaporation', 'Non-Dry Soil Water Availability', 'Precipitation', 'Maximum Temperature', 'Volumetric Water Content'
         ],
         tickmarkPlacement: 'on',
-        lineWidth: 0
+        lineWidth: 0,
+        labels: {
+            style: {
+                fontSize: axis_tick_label_font_size,
+            }
+        }
     },
 
     yAxis: {
@@ -337,7 +459,10 @@ Highcharts.chart('radar_chart', {
         max: 1,
         tickInterval: 0.2,
         labels: {
-            format: '{value}'
+            format: '{value}',
+            style: {
+                fontSize: axis_tick_label_font_size,
+            }
         }
     },
 
@@ -350,14 +475,17 @@ Highcharts.chart('radar_chart', {
     legend: {
         align: 'right',
         verticalAlign: 'middle',
-        layout: 'vertical'
+        layout: 'vertical',
+        itemStyle: {
+            fontSize: legend_item_font_size,
+        }
     },
 
     series: [{
         name: '1981',
         data: [0.256, 0.832, 0.101, 0.577, 0.792, 0.066],
         pointPlacement: 'on',
-        color: '#C1AE9F',
+        color: color_1980,
         fillColor: 'rgba(193, 174, 159, 0.7)',
         marker: {
         	symbol: 'circle',
@@ -367,7 +495,7 @@ Highcharts.chart('radar_chart', {
         name: '2018',
         data: [0.868, 0.093, 0.054, 0.177, 0.366, 0.065],
         pointPlacement: 'on',
-				color: '#A2AD59',
+		color: color_2018,
         marker: {
         	symbol: 'circle',
           radius: 3
@@ -376,7 +504,7 @@ Highcharts.chart('radar_chart', {
         name: '2024',
         data: [0.417, 0.295, 0.562, 0.33, 0.934, 0.07],
         pointPlacement: 'on',
-        color: '#D3BDB0',
+        color: color_2024,
         marker: {
         	symbol: 'circle',
           radius: 3

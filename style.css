@@ -9,16 +9,16 @@ html {
   font-size: 10px;
   font-family: "Open Sans";
   --text_color: #333;
-  --title_bg_color: #ffffff;
-  --first_bg_color: #ffffff;
+  --title_bg_color: #EEE7ED;
+  --first_bg_color: #EEE7ED;
   --bg_color: #22da72;
-  --nav_bar_color: #a2ad59;
+  --nav_bar_color: #A3AE5B;
   --text_size: 1.6rem;
   --title_text_size: 3.2rem;
   --header_text_size: 2.4rem;
-  --border_color: #a2ad59;
-  --left_sub_section_bg_color: #ffffff;
-  --right_sub_section_bg_color: #ffffff;
+  --border_color: #EEE7ED;
+  --left_sub_section_bg_color: #EEE7ED;
+  --right_sub_section_bg_color: #EEE7ED;
   --margin_left: 10rem;
 }
 
@@ -72,7 +72,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10rem;
-  /* box-sizng: border-box; */
+  box-sizing: border-box;
 }
 
 /* Formatting the first section */
@@ -111,6 +111,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10rem;
+  box-sizing: border-box;
 }
 
 /* Formatting right sub section */
@@ -238,6 +240,7 @@ body {
 
 .highcharts-button-symbol {
   display: none;
+  background-color: transparent;
 }
 
 /* Scatterplot with regression */
@@ -562,4 +565,8 @@ body {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.fl-layout-wrapper-outer :dir(ltr) {
+  background-color: transparent;
 }

@@ -1,5 +1,6 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script defer src="script.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -34,6 +35,9 @@
   <main>
     <div class="title_section">
       <h1>Analysis of Natural Bridges National Park</h1>
+      <p>
+        Introduction: This website is created to analyze the data of Natural Bridges National Park. The data includes the greenery area, plant litter, volumetric water content, and summer indicators. The data is collected from 1980 to 2018, and the organization predicted the data from 2021 to 2024. The data is visualized by using Highcharts and Flourish.
+      </p>
     </div>
 
     <div class="first_section">
@@ -129,24 +133,20 @@
       </div>
       <div class="sub_section_bottom">
         <h4>Volumetric Water Content by Season</h4>
-        <p>This is bar chart</p>
+        <p>
+          I wanted to see the volumetric water content by season. 
+        </p>
       </div>
     </div>
 
     <div class="vertical_section">
       <div class="sub_section_top">
-        <div class="figure-4">
-          <div class="lineplot">
-            <figure class="highcharts-figure">
-              <div id="linechart"></div>
-              <p class="highcharts-description">
-              </p>
-            </figure>
-          </div>
-          <div class="text">
+        <figure class="highcharts-figure">
+          <div id="linechart"></div>
+          <p class="highcharts-description" align="center">
             [Figure 4]
-          </div>
-        </div>
+          </p>
+        </figure>
       </div>
       <div class="sub_section_bottom">
         <h4>Relationship of the Summer Indicators</h4>
@@ -157,18 +157,12 @@
 
     <div class="section">
       <div class="sub_section_left">
-        <div class="figure-5">
-          <div class="radarplot">
-            <figure class="highcharts-figure">
-              <div id="radar_chart"></div>
-              <p class="highcharts-description">
-              </p>
-            </figure>
-          </div>
-          <div class="text">
+        <figure class="highcharts-figure">
+          <div id="radar_chart"></div>
+          <p class="highcharts-description" align="center">
             [Figure 5]
-          </div>
-        </div>
+          </p>
+        </figure>
       </div>
       <div class="sub_section_right">This is Highchart Radar chart.</div>
     </div>
