@@ -18,7 +18,7 @@ const color_1980 = '#6b7fd7';
 const color_2018 = '#eb7bc0';
 const color_2024 = '#4c2a85';
 
-const heatmap_max_color = '#DAD981'
+const heatmap_max_color = '#CDCF8C'
 
 // Scatterplot with regression line
 const dataset = [
@@ -412,131 +412,6 @@ Highcharts.chart('linechart', {
   }
 });
 
-// Radar Chart
-Highcharts.chart('radar_chart', {
-
-    chart: {
-        polar: true,
-        type: 'spline',
-        backgroundColor: 'transparent',
-    }, 
-
-    title: {
-        text: 'Relationships of the Indicators of the Summer',
-        align: 'left',
-        style: {
-            fontSize: title_font_size,
-        }
-    },
-
-    subtitle: {
-        text: 'Number of Days of Dry Soil vs. Evaporation vs. Non-Dry Soil Water Availability vs. Precipitation vs. Maximum Temperature vs. Volumetric Water Content',
-        align: 'left',
-        style: {
-            fontSize: subtitle_font_size,
-        }
-    },
-
-    pane: {
-        size: '80%'
-    },
-
-    xAxis: {
-        categories: [
-            'Number of Days of Dry Soil', 'Evaporation', 'Non-Dry Soil Water Availability', 'Precipitation', 'Maximum Temperature', 'Volumetric Water Content'
-        ],
-        tickmarkPlacement: 'on',
-        lineWidth: 0,
-        labels: {
-            style: {
-                fontSize: axis_tick_label_font_size,
-            }
-        }
-    },
-
-    yAxis: {
-        gridLineInterpolation: 'polygon',
-        tickmarkPlacement: 'on',
-        min: 0,
-        max: 1,
-        tickInterval: 0.2,
-        labels: {
-            format: '{value}',
-            style: {
-                fontSize: axis_tick_label_font_size,
-            }
-        },
-        gridLineColor: '##FF0000'
-    },
-
-    tooltip: {
-        shared: true,
-        pointFormat: '<span style="color:{series.color}">{series.name}: <b>' +
-            '{point.y:,.3f}</b><br/>',
-        style: {
-            fontSize: tooltip_font_size,
-        }
-    },
-
-    legend: {
-        align: 'right',
-        verticalAlign: 'middle',
-        layout: 'vertical',
-        itemStyle: {
-            fontSize: legend_item_font_size,
-        }
-    },
-
-    series: [{
-        name: '1981',
-        data: [0.256, 0.832, 0.101, 0.577, 0.792, 0.066],
-        pointPlacement: 'on',
-        color: color_1980,
-        fillColor: 'rgba(193, 174, 159, 0.7)',
-        marker: {
-        	symbol: 'circle',
-          radius: 3
-        }
-    }, {
-        name: '2018',
-        data: [0.868, 0.093, 0.054, 0.177, 0.366, 0.065],
-        pointPlacement: 'on',
-		color: color_2018,
-        marker: {
-        	symbol: 'circle',
-          radius: 3
-        }
-    }, {
-        name: '2024',
-        data: [0.417, 0.295, 0.562, 0.33, 0.934, 0.07],
-        pointPlacement: 'on',
-        color: color_2024,
-        marker: {
-        	symbol: 'circle',
-          radius: 3
-        }
-    }],
-
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 500
-            },
-            chartOptions: {
-                legend: {
-                    align: 'center',
-                    verticalAlign: 'bottom',
-                    layout: 'horizontal'
-                },
-                pane: {
-                    size: '70%'
-                }
-            }
-        }]
-    }
-
-});
-
 //////////////////// Vegetation Heatmap ////////////////////////
 
 // Substring template helper for the responsive labels
@@ -692,7 +567,7 @@ Highcharts.chart('summer-heatmap', {
 
     xAxis: {
         categories: [
-            'Longitude', 'Latitude', 'Year', 'RCP', 'Number of Days of Dry Soil', 'Evaporation', 'Non-Dry Soil Water Availability', 'Precipitation', 'Maximum Temperature', 'Volumetric Water Content'
+            'Longitude', 'Latitude', 'Year', 'RCP', 'Days of Dry Soil', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
         ],
         title: {
             text: 'Indicators of Summer',
@@ -709,7 +584,7 @@ Highcharts.chart('summer-heatmap', {
 
     yAxis: {
         categories: [
-            'Longitude', 'Latitude', 'Year', 'RCP', 'Number of Days of Dry Soil', 'Evaporation', 'Non-Dry Soil Water Availability', 'Precipitation', 'Maximum Temperature', 'Volumetric Water Content'
+            'Longitude', 'Latitude', 'Year', 'RCP', 'Days of Dry Soil', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
         ],
         reversed: true,
         title: {

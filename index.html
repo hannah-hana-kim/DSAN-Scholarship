@@ -21,19 +21,18 @@
   <nav class = "navbar">
     <div class="container">
       <div class = "logo">
-        <img src="./images/nature.png" alt="Nature" />
+        <img src="./images/nature.svg" alt="Nature" />
       </div>
       <div class = "navbar_links">
-        <a href = "#">Home</a>
-        <a href = "#">Data Analysis</a>
-        <a href = "#">Code</a>
-        <a href = "#">Reference</a>
+        <a href = "#intro">DSAN 2024 Scholarship Project</a>
+        <a href = "https://github.com/hannah-hana-kim/SCHOLARSHIP">Code Implementation</a>
+        <a href = "#reference.html">Reference</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <div class="title_section">
+    <div class="title_section", id="intro">
       <h1>Analysis of Natural Bridges National Park</h1>
       <p>
         Introduction: This website is created to analyze the data of Natural Bridges National Park. The data includes the greenery area, plant litter, volumetric water content, and summer indicators. The data is collected from 1980 to 2018, and the organization predicted the data from 2021 to 2024. The data is visualized by using Highcharts and Flourish.
@@ -152,26 +151,6 @@
       </div>
     </div>
 
-
-    <div class="section">
-      <div class="sub_section_left">
-        <figure class="highcharts-figure">
-          <div id="radar_chart"></div>
-          <p class="highcharts-description" align="center">
-            [Figure 5]
-          </p>
-        </figure>
-      </div>
-      <div class="sub_section_right">
-        This is Highchart Radar chart. I don't know why the grid line is not showing. Now, I wanted to zoom out a little bit, and see the relationships among the five indicators including the three indicators above by radar chart. This graph also includes the historical baseline data and the predicted data. In 1981, it had high precipitation. However, due to high temperature, the evaporation rate was also high. I assume the low non-dry soil water availability due to the high rate of evaporation, but interestingly, the number of days of dry soil was also low. <br>
-        In 2018, the number of days of dry soil was high although it had relatively low temperature and low evaporation rate. It seems like precipitation has the biggest impact on the number of days of dry soil. <br>
-        In 2024, which is predicted data, has the highest maximum temperature, low precipitation and evaporation, which also leads to low number of days of dry soil. 
-        
-        Interestingly, the VWC value was all close to 0. By this graph, we can see the relationship of the five indicators. 
-       </div>
-    </div>
-
-
     <div class="section">
       <div class="sub_section_left">
         <div class="flourish-embed flourish-radar" data-src="visualisation/17966848">
@@ -179,7 +158,12 @@
           </script>
         </div>
       </div>
-      <div class="sub_section_right">This is Flourish chart</div>
+      <div class="sub_section_right">
+        Now, I wanted to zoom out a little bit, and see the relationships among the five indicators including the three indicators above by radar chart. This graph also includes the historical baseline data and the predicted data. In 1981, it had high precipitation. However, due to high temperature, the evaporation rate was also high. I assume the low non-dry soil water availability due to the high rate of evaporation, but interestingly, the number of days of dry soil was also low. <br>
+        In 2018, the number of days of dry soil was high although it had relatively low temperature and low evaporation rate. It seems like precipitation has the biggest impact on the number of days of dry soil. <br>
+        In 2024, which is predicted data, has the highest maximum temperature, low precipitation and evaporation, which also leads to low number of days of dry soil. 
+        
+        Interestingly, the VWC value was all close to 0. By this graph, we can see the relationship of the five indicators. </div>
     </div>
 
 
