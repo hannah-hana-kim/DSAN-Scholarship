@@ -304,4 +304,101 @@ Highcharts.chart('linechart', {
   }
 });
 
-// 
+// Radar Chart
+Highcharts.chart('radar_chart', {
+
+    chart: {
+        polar: true,
+        type: 'spline',
+        backgroundColor: 'transparent',
+    }, 
+
+    title: {
+        text: 'Indicators of the Summer',
+        x: -80
+    },
+
+    pane: {
+        size: '80%'
+    },
+
+    xAxis: {
+        categories: [
+            'Number of Days of Dry Soil', 'Evaporation', 'Non-Dry Soil Water Availability', 'Precipitation', 'Maximum Temperature', 'Volumetric Water Content'
+        ],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        tickmarkPlacement: 'on',
+        min: 0,
+        max: 1,
+        tickInterval: 0.2,
+        labels: {
+            format: '{value}'
+        }
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>' +
+            '{point.y:,.3f}</b><br/>'
+    },
+
+    legend: {
+        align: 'right',
+        verticalAlign: 'middle',
+        layout: 'vertical'
+    },
+
+    series: [{
+        name: '1981',
+        data: [0.256, 0.832, 0.101, 0.577, 0.792, 0.066],
+        pointPlacement: 'on',
+        color: '#C1AE9F',
+        fillColor: 'rgba(193, 174, 159, 0.7)',
+        marker: {
+        	symbol: 'circle',
+          radius: 3
+        }
+    }, {
+        name: '2018',
+        data: [0.868, 0.093, 0.054, 0.177, 0.366, 0.065],
+        pointPlacement: 'on',
+				color: '#A2AD59',
+        marker: {
+        	symbol: 'circle',
+          radius: 3
+        }
+    }, {
+        name: '2024',
+        data: [0.417, 0.295, 0.562, 0.33, 0.934, 0.07],
+        pointPlacement: 'on',
+        color: '#D3BDB0',
+        marker: {
+        	symbol: 'circle',
+          radius: 3
+        }
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    layout: 'horizontal'
+                },
+                pane: {
+                    size: '70%'
+                }
+            }
+        }]
+    }
+
+});

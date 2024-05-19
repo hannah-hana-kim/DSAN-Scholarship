@@ -2,6 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script defer src="script.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
   <script src="https://code.highcharts.com/modules/series-label.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -11,7 +12,7 @@
     rel="stylesheet"
   />
   <link rel="icon" href="./images/nature.png" type="image/x-icon">
-  <title>Analysis on _____ at Natural Bridges National Park</title>
+  <title>Analysis of Natural Bridges National Park</title>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
 
   <main>
     <div class="title_section">
-      <h1>Analysis on _____ at Natural Bridges National Park</h1>
+      <h1>Analysis of Natural Bridges National Park</h1>
     </div>
     <div class="first_section">
       <div class="first_section_left">
@@ -92,9 +93,15 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        After analyzing the greenery area, I also wanted to deep dive into plant litter variable. This scatter plot shows the relationship between the percentage area of the plant litter and the annual temperature. <br>
+        <p>
+          After analyzing the greenery area, I also wanted to deep dive into plant litter variable. This scatter plot shows the relationship between the percentage area of the plant litter and the annual temperature. <br>
 
-        According to the article, 
+        According to the <cite>
+          <a href="https://link.springer.com/article/10.1007/s11104-018-3889-x">article: Litter decomposition, effects of temperature driven by soil moisture and vegetation type</a></cite>, the plant litter has both direct and indirect relationship with temperature. 
+
+          The article tells us that the temperature will likely to decrease when there are more plant litter. This line chart proves this information. This chart included both historical data and predicted data, and it also predicted that the temperature will decrease in 2024.
+        </p>
+
       </div>
     </div>
     <div class="vertical_section">
@@ -128,8 +135,14 @@
       <div class="sub_section_right">B</div>
     </div>
     <div class="section">
-      <div class="sub_section_left">A</div>
-      <div class="sub_section_right">B</div>
+      <div class="sub_section_left">
+        <figure class="highcharts-figure">
+          <div id="radar_chart"></div>
+          <p class="highcharts-description">
+          </p>
+      </figure>
+      </div>
+      <div class="sub_section_right">This is Highchart Radar chart.</div>
     </div>
     <div class="section">
       <div class="sub_section_left">
@@ -138,8 +151,8 @@
       <div class="sub_section_right">This is Flourish chart</div>
     </div>
     <div class="section">
-      <div class="sub_section_left">A</div>
-      <div class="sub_section_right">B</div>
+      <div class="sub_section_left">Image</div>
+      <div class="sub_section_right">Conclusion</div>
     </div>
   </main>
 </body>
