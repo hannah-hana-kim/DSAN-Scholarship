@@ -9,15 +9,15 @@ html {
   font-size: 10px;
   font-family: "Open Sans";
   --text_color: #333;
-  --title_bg_color: #fc8686;
-  --first_bg_color: #86fcfc;
+  --title_bg_color: #ffffff;
+  --first_bg_color: #ffffff;
   --bg_color: #22da72;
   --nav_bar_color: #d5fc86;
   --text_size: 1.6rem;
   --title_text_size: 3.2rem;
   --header_text_size: 2.4rem;
-  --border_color: #050eff;
-  --left_sub_section_bg_color: #db57ff;
+  --border_color: #8FCB9B;
+  --left_sub_section_bg_color: #ffffff;
   --right_sub_section_bg_color: #ffffff;
   --margin_left: 10rem;
 }
@@ -158,6 +158,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 5%;
+  padding-right: 5%
 }
 
 /* -------------- Maps ------------------ */
@@ -172,7 +175,32 @@ body {
   flex-direction: row;
 }
 
+.map_1,
+.map_2,
+.map_3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map_1980_text,
+.map_2018_text,
+.map_2024_text {
+  font-size: 1.6rem;
+  color: var(--text_color);
+}
+
 /* -------------- Highcharts ------------------ */
+
+.highcharts-credits {
+  display: none;
+}
+
+.highcharts-button-symbol {
+  display: none;
+}
+
 /* Scatterplot with regression */
 #container_1,
 #container_2,
@@ -181,10 +209,16 @@ body {
   width: 100%;
 }
 
-.highcharts-figure-1,
+#scatterplot {
+  height: 600px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.highcharts-figure,
 .highcharts-data-table table {
   min-width: 85%;
-  /* max-width: 100%; */
+  max-width: 100%;
   margin: 1em auto;
 }
 
@@ -226,7 +260,7 @@ body {
 
 /* Bar Graph */
 
-.highcharts-figure-2,
+.highcharts-figure,
 .highcharts-data-table table {
     min-width: 310px;
     max-width: 800px;
@@ -274,7 +308,7 @@ body {
 }
 
 /* Line Graph */
-.highcharts-figure-3,
+.highcharts-figure,
 .highcharts-data-table table {
     min-width: 310px;
     max-width: 800px;
@@ -315,4 +349,11 @@ body {
 
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
+}
+
+
+
+/* --------------------- Flourish --------------------- */
+.flourish-credit {
+  display: none;
 }

@@ -80,7 +80,7 @@ Highcharts.chart('scatterplot', {
     yAxis: {
         min: 10,
         title: {
-        	text: 'Annual Temperature (°C)'
+        	text: 'Annual Temperature (Celsius)'
         }
     },
     series: [{
