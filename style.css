@@ -12,7 +12,7 @@ html {
   --title_bg_color: #EEE7ED;
   --first_bg_color: #EEE7ED;
   --bg_color: #EEE7ED;
-  --nav_bar_color: #CDCF8C;
+  --nav_bar_color: #04aa6dbd;
   --text_size: 1.6rem;
   --title_text_size: 3.2rem;
   --header_text_size: 2.4rem;
@@ -28,6 +28,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* cite */
+#cite_color a {
+  color: var(--nav_bar_color);
+  text-decoration: none;
 }
 
 /* -------------------- Nav bar --------------------- */
@@ -54,8 +60,7 @@ body {
 }
 
 .topnav a.active {
-   /* background-color: #04AA6D; */
-  background-color: #04aa6dbd;
+  background-color: var(--nav_bar_color);
   color: white;
 }
 
@@ -71,6 +76,11 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.title_section p {
   padding: 10rem;
   box-sizing: border-box;
 }
@@ -245,7 +255,7 @@ body {
 .sub_section_top {
   background-color: var(--left_sub_section_bg_color);
   width: 100%;
-  height: 60%;
+  height: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -267,10 +277,13 @@ body {
 }
 
 /* --------------------- Figures --------------------- */
-.scatterplot {
+#scatterplot, #barchart, #linechart {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
 }
 
 .text {
@@ -332,12 +345,6 @@ body {
 #container_3 {
   height: 50%;
   width: 100%;
-}
-
-#scatterplot {
-  height: 600px;
-  width: 800px;
-  margin: 0 auto;
 }
 
 .highcharts-figure,

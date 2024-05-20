@@ -13,22 +13,21 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
     rel="stylesheet"
   />
-  <link rel="icon" href="./images/nature.png" type="image/x-icon">
   <title>Analysis of Natural Bridges National Park</title>
 </head>
 
 <body>
   <div class="topnav">
-    <a class="active" href="#intro">DSAN 2024 Scholarship Project</a>
+    <a class="active" href="index.html">DSAN 2024 Scholarship Project</a>
     <a href="https://github.com/hannah-hana-kim/SCHOLARSHIP" target="_blank">Code Implementation</a>
-    <a href="#reference.html">Reference</a>
+    <a href="reference.html">Reference</a>
   </div>
 
   <main>
-    <div class="title_section", id="intro">
+    <div class="title_section">
       <h1>Analysis of Natural Bridges National Park</h1>
-      <h3>Introduction</h3>
-      <p align="center">
+      <p>
+        Introduction: <br>
         This website is created to analyze the data at Natural Bridges National Park. The analysis includes the vegetation area, plant litter, volumetric water content, and summer indicators data. For the sake of flow, I focused only on the summer data.
         <br><br>
         The baseline data is the environment data at Natural Bridges National Park collected from 1980 to 2018, and the organization predicted the same features from 2021 to 2024 using RCP 4.5 and RCP 8.5 scenarios.
@@ -102,7 +101,7 @@
         <p>
           After analyzing the greenery area, I also wanted to deep dive into plant litter variable. This scatter plot shows the relationship between the percentage area of the plant litter and the annual temperature. <br>
 
-          According to the <cite>
+          According to the <cite id="cite_color">
           <a href="https://link.springer.com/article/10.1007/s11104-018-3889-x">article: Litter decomposition, effects of temperature driven by soil moisture and vegetation type</a></cite>, the plant litter has both direct and indirect relationship with temperature. 
 
           The article tells us that the temperature will likely to decrease when there are more plant litter. This line chart proves this information. This chart included both historical data and predicted data, and it also predicted that the temperature will decrease in 2024.
@@ -142,7 +141,6 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        <h4>Relationship of the Summer Indicators</h4>
         <p>
           After taking a look at the volumetric water content value, I wanted to deep-dive into the summer data. The data gives some indicators of the summer such as number of days of dry soil, evaporation rate, precipitation rate, etc. <br>
           In this graph, I focused on the trend of the three indicators: Number of days of dry soil, Evaporation rate, Precipitation rate. The data has been normalized since the unit of the indicators were different. From this graph, we can see that the evaporation and precipitation trend were similar, whereas the number of days of dry soil was the opposite. <br>
@@ -159,11 +157,10 @@
         </div>
       </div>
       <div class="sub_section_right">
-        Now, I wanted to zoom out a little bit, and see the relationships among the five indicators including the three indicators above by radar chart. This graph also includes the historical baseline data and the predicted data. In 1981, it had high precipitation. However, due to high temperature, the evaporation rate was also high. I assume the low non-dry soil water availability due to the high rate of evaporation, but interestingly, the number of days of dry soil was also low. <br>
-        In 2018, the number of days of dry soil was high although it had relatively low temperature and low evaporation rate. It seems like precipitation has the biggest impact on the number of days of dry soil. <br>
-        In 2024, which is predicted data, has the highest maximum temperature, low precipitation and evaporation, which also leads to low number of days of dry soil. 
-        
-        Interestingly, the VWC value was all close to 0. By this graph, we can see the relationship of the five indicators. </div>
+        Now, I wanted to zoom out a little bit, and see the relationships among the five indicators in the summer. This graph also includes the predicted data from 2021 and 2024. <br>
+        Overall, I could see a relationship between the evaporation rate and the volumetric water content value. The higher the evaporation rate, the lower the VWC value. Also, there was a relationship found between the number of days with dry soil and the precipitation rate. The higher the precipitation rate, the less the number of days with dry soil.
+        <br>
+        Interestingly, the predicted data from 2021 to 2024 did not reflect this analysis that well. Throughout 4 years, it was difficult to figure out the relationships that we found from the historical data. </div>
     </div>
 
 
@@ -189,7 +186,8 @@
       <div class="sub_section_map_bottom">
         <h4>Data Prediction</h4>
         <p>
-          I wondered if we can predict the data based on the previous analysis. I wanted to see how better or worse will the climate will change. Unfortunately, the vegetation data and the summer indicators had no correlation with RCP 
+          I wondered if we can predict the data based on the previous analysis. I wanted to see how better or worse will the climate will change. Unfortunately, the vegetation data and the summer indicators barely had any correlation with RCP. <br>
+          This can explain why the predicted data from 2021 to 2024 did not reflect the historical data that well. <br>
         </p> 
       </div>
     </div>
@@ -199,7 +197,8 @@
         <img src="./images/Tangled.gif" alt="Rapunzel Rotating" class="styled-gif"/>
       </div>
       <div class="last_section_bottom">
-        Conclusion
+        This analysis shows the environment data at Natural Bridges National Park. I tried to analyze the historical data which is from 1980 to 2020 and the predicted data from 2021 to 2024. <br>
+        Interestingly, the predicted data did not reflect the historical data that well, and also showed the climate will get better in general. <br>
       </div>
     </div>
   </main>

@@ -435,6 +435,7 @@ Highcharts.chart('vegetation-heatmap', {
 
     title: {
         text: 'Correlation among the Vegetation Indicators',
+        align: 'center',
         style: {
             fontSize: title_font_size
         }
@@ -481,7 +482,7 @@ Highcharts.chart('vegetation-heatmap', {
 
     colorAxis: {
         min: -1,
-        minColor: '#FFFFFF',
+        minColor: '#ffffff',
         maxColor: heatmap_max_color,
         reversed: false
     },
@@ -564,7 +565,8 @@ Highcharts.chart('summer-heatmap', {
         text: 'Correlation among the Summer Indicators',
         style: {
             fontSize: title_font_size
-        }
+        },
+        align: 'center'
     },
 
     xAxis: {
@@ -613,7 +615,7 @@ Highcharts.chart('summer-heatmap', {
         min: -1,
         max: 1,
         reversed: false,
-        minColor: '#FFFFFF',
+        minColor: '#ffffff',
         maxColor: heatmap_max_color
     },
 
