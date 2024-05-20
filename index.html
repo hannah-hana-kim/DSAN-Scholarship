@@ -18,38 +18,39 @@
 </head>
 
 <body>
-  <nav class = "navbar">
-    <div class="container">
-      <div class = "logo">
-        <img src="./images/nature.svg" alt="Nature" />
-      </div>
-      <div class = "navbar_links">
-        <a href = "#intro">DSAN 2024 Scholarship Project</a>
-        <a href = "https://github.com/hannah-hana-kim/SCHOLARSHIP">Code Implementation</a>
-        <a href = "#reference.html">Reference</a>
-      </div>
-    </div>
-  </nav>
+  <div class="topnav">
+    <a class="active" href="#intro">DSAN 2024 Scholarship Project</a>
+    <a href="https://github.com/hannah-hana-kim/SCHOLARSHIP" target="_blank">Code Implementation</a>
+    <a href="#reference.html">Reference</a>
+  </div>
 
   <main>
     <div class="title_section", id="intro">
       <h1>Analysis of Natural Bridges National Park</h1>
-      <p>
-        Introduction: This website is created to analyze the data of Natural Bridges National Park. The data includes the greenery area, plant litter, volumetric water content, and summer indicators. The data is collected from 1980 to 2018, and the organization predicted the data from 2021 to 2024. The data is visualized by using Highcharts and Flourish.
-        This report also looks into the vegetation area, the volumetric water content, and the summer indicators. For the sake of the analysis flow, I focused only on the summer data. 
+      <h3>Introduction</h3>
+      <p align="center">
+        This website is created to analyze the data at Natural Bridges National Park. The analysis includes the vegetation area, plant litter, volumetric water content, and summer indicators data. For the sake of flow, I focused only on the summer data.
+        <br><br>
+        The baseline data is the environment data at Natural Bridges National Park collected from 1980 to 2018, and the organization predicted the same features from 2021 to 2024 using RCP 4.5 and RCP 8.5 scenarios.
+        <br>
+        Since this analysis includes both collected and predicted data, it will help us understand the climate change at Natural Bridges National Park and predict the future climate change.
+
       </p>
     </div>
 
     <div class="first_section">
-      <div class="first_section_left">
+      <div class="first_section_top">
         <img src="./images/browser-use-warning.gif" alt="Rapunzel Falling" class="styled-gif"/>
       </div>
-      <div class="first_section_right">
-        Please open this website on a Safari browser for the best experience.
+      <div class="first_section_bottom">
+        I recommend opening this website on a Safari browser for best experience.
       </div>
     </div>
 
     <div class="vertical_map_section">
+      <div>
+        <h2>Vegetation Status at Natural Bridge National Park</h2>
+      </div>
       <div class="sub_section_map_top">
         <div class = "map_1">
           <div class = "map_1980">
@@ -78,12 +79,12 @@
       </div>
 
       <div class="sub_section_map_bottom">
-        <h4>Vegetation Status at Natural Bridge National Park</h4>
         <p>
-          Figure 1.1 and Figure 1.2 are the maps that shows the greenery area at Natural Bridge National Part in 1980 and 2018 respectively. The greenery area in the northeast part of the park  had been increased, whereas that of the middle, southern part had been decreased, although it is a slight difference. <br>
+          I wanted to look at the vegetation area at Natural Bridge National Park first. 
+          <br><br>
+          Figure 1.1, Figure 1.2, and Figure 1.3 show the vegetation area at Natural Bridge National Part in 1980, 2018, and 2024 respectively. Although they showed a slight difference, the greenery area in the northeast part of the park had been increased, and the mid-part and southern part had decreased in Figure 1.2.<br><br>
           
-          Based on the data from 1980 to 2018, the organization predicted the same data from 2021 to 2024. Figure 1.3 shows the predicted greenery area in 2024. Even though it is a slight change, there are some interesting foundings from this chart. <br>
-          The greenery area has been increased in the northern park of the park and the bare area has been recovered in the west area. 
+          Based on the data from 1980 to 2018, the organization predicted the same data from 2021 to 2024 and the figure 1.3 shows the greenery area in 2024. Although the predicted data doesn't show a significant difference from the historical data, it seems that the greenery area has been recovered in the northeast part of the park.
         </p> 
       </div>
     </div>
@@ -98,7 +99,6 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        <h4>Plant Litter Status at Natural Bridge National Park</h4>
         <p>
           After analyzing the greenery area, I also wanted to deep dive into plant litter variable. This scatter plot shows the relationship between the percentage area of the plant litter and the annual temperature. <br>
 
@@ -194,9 +194,13 @@
       </div>
     </div>
 
-    <div class="section">
-      <div class="sub_section_left">Image</div>
-      <div class="sub_section_right">Conclusion</div>
+    <div class="last_section">
+      <div class="last_section_left">
+        <img src="./images/Tangled.gif" alt="Rapunzel Rotating" class="styled-gif"/>
+      </div>
+      <div class="last_section_bottom">
+        Conclusion
+      </div>
     </div>
   </main>
 </body>

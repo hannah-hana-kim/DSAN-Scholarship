@@ -18,7 +18,7 @@ const color_1980 = '#6b7fd7';
 const color_2018 = '#eb7bc0';
 const color_2024 = '#4c2a85';
 
-const heatmap_max_color = '#CDCF8C'
+const heatmap_max_color = '#04aa6d'
 
 // Scatterplot with regression line
 const dataset = [
@@ -88,6 +88,8 @@ function getTrendLine(data) {
 Highcharts.chart('scatterplot', {
     chart: {
       backgroundColor: 'transparent',
+      width: 800,
+      height: 600,
     },
     title: {
         text: 'Relationship between the Plant Litter and Annual Temperature',
@@ -319,7 +321,7 @@ Highcharts.chart('linechart', {
       backgroundColor: 'transparent',
   },
   title: {
-    text: 'The Trend the Summer Indicators',
+    text: 'The Trend of the Summer Indicators',
     align: 'left',
     style: {
         fontSize: title_font_size,
@@ -567,7 +569,7 @@ Highcharts.chart('summer-heatmap', {
 
     xAxis: {
         categories: [
-            'Longitude', 'Latitude', 'Year', 'RCP', 'Days of Dry Soil', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
+            'Longitude', 'Latitude', 'Year', 'RCP', 'Dry Soil Days', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
         ],
         title: {
             text: 'Indicators of Summer',
@@ -584,7 +586,7 @@ Highcharts.chart('summer-heatmap', {
 
     yAxis: {
         categories: [
-            'Longitude', 'Latitude', 'Year', 'RCP', 'Days of Dry Soil', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
+            'Longitude', 'Latitude', 'Year', 'RCP', 'Dry Soil Days', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
         ],
         reversed: true,
         title: {
