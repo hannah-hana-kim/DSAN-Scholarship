@@ -8,6 +8,7 @@ const axis_tick_label_font_size = '1.3em';
 const legend_item_font_size = '1.3em';
 const tooltip_font_size = '1.3em';
 const series_font_size = '1.3em';
+const series_heatmap_font_size = '1.1em'
 
 const scatters_color = '#eda4bd';
 const line_color = '#7d1128';
@@ -566,17 +567,6 @@ Highcharts.chart('vegetation-heatmap', {
             fontFamily: font_family
         }
     },
-    plotOptions: {
-        series: {
-            label: {
-                style: {
-                    fontSize: series_font_size,
-                    fontFamily: font_family
-                }
-            }
-        }
-    },
-
     series: [{
         name: 'Correlation matrix',
         borderWidth: 1,
@@ -592,6 +582,11 @@ Highcharts.chart('vegetation-heatmap', {
             [8, 0, -0.007], [8, 1, -0.007], [8, 2, -0.010], [8, 3, 0.396], [8, 4, 0.336], [8, 5, -0.915], [8, 6, 0.617], [8, 7, 0.803], [8, 8, 1.000]
         ],
         dataLabels: {
+            style: {
+                fontSize: series_heatmap_font_size,
+                fontFamily: font_family,
+                fontWeight: 'normal'
+            },
             enabled: true,
             color: '#000000'
         }
@@ -728,6 +723,11 @@ Highcharts.chart('summer-heatmap', {
             [6, 0, 0.011], [6, 1, 0.016], [6, 2, 0.227], [6, 3, 0.521], [6, 4, 0.005], [6, 5, -0.003], [6, 6, 1.000]
         ],
         dataLabels: {
+            style: {
+                fontSize: series_heatmap_font_size,
+                fontFamily: font_family,
+                fontWeight: 'normal'
+            },
             enabled: true,
             color: '#000000'
         }
