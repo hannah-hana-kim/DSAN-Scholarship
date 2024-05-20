@@ -154,7 +154,6 @@ Highcharts.chart('scatterplot', {
             label: {
                 style: {
                     fontSize: series_font_size,
-
                     fontFamily: font_family
                 }
             }
@@ -251,6 +250,14 @@ Highcharts.chart('barchart', {
               enabled: true
           },
           groupPadding: 0.1
+      },
+      series: {
+        label: {
+            style: {
+                fontSize: series_font_size,
+                fontFamily: font_family
+            }
+        }
       }
   },
   legend: {
@@ -428,7 +435,16 @@ Highcharts.chart('linechart', {
           marker: {
               enabled: false
           }
-      }
+      },
+      series: {
+        label: {
+            style: {
+                fontSize: series_font_size,
+                fontFamily: font_family
+            }
+        }
+      
+        }
   },
   series: [{
       name: 'Days of Dry Soil',
@@ -548,6 +564,16 @@ Highcharts.chart('vegetation-heatmap', {
         style: {
             fontSize: tooltip_font_size,
             fontFamily: font_family
+        }
+    },
+    plotOptions: {
+        series: {
+            label: {
+                style: {
+                    fontSize: series_font_size,
+                    fontFamily: font_family
+                }
+            }
         }
     },
 

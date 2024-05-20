@@ -9,16 +9,16 @@ html {
   font-size: 10px;
   font-family: "Source Sans Pro";
   --text_color: #333;
-  --title_bg_color: #ffffff;
-  --first_bg_color: #ffffff;
-  --bg_color: #ffffff;
-  --nav_bar_color: #f0f0f0;
+  --title_bg_color: #f6f6f6;
+  --first_bg_color: #f6f6f6;
+  --bg_color: #f6f6f6;
+  --nav_bar_color: #dee2e6;
   --text_size: 1.6rem;
   --title_text_size: 3.2rem;
   --header_text_size: 2.4rem;
-  --border_color: #f0f0f0;
-  --left_sub_section_bg_color: #ffffff;
-  --right_sub_section_bg_color: #ffffff;
+  --border_color: #dee2e6;
+  --left_sub_section_bg_color: #f6f6f6;
+  --right_sub_section_bg_color: #f6f6f6;
   --margin_left: 10rem;
 }
 
