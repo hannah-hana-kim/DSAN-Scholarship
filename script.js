@@ -1,5 +1,6 @@
 // variables
 const title_font_size = '2.2em';
+const heatmap_title_font_size = '2em';
 const subtitle_font_size = '1.8em';
 const axis_label_font_size = '1.5em';
 const axis_tick_label_font_size = '1.3em';
@@ -429,8 +430,8 @@ Highcharts.chart('vegetation-heatmap', {
 
     chart: {
         type: 'heatmap',
-        width: 600,
-        height: 600,
+        width: 500,
+        height: 500,
         marginTop: 40,
         marginBottom: 80,
         plotBorderWidth: 1,
@@ -441,7 +442,7 @@ Highcharts.chart('vegetation-heatmap', {
         text: 'Correlation among the Vegetation Indicators',
         align: 'center',
         style: {
-            fontSize: title_font_size
+            fontSize: heatmap_title_font_size
         }
     },
 
@@ -557,8 +558,8 @@ Highcharts.chart('vegetation-heatmap', {
 Highcharts.chart('summer-heatmap', {
     chart: {
         type: 'heatmap',
-        width: 600,
-        height: 600,
+        width: 500,
+        height: 500,
         marginTop: 40,
         marginBottom: 80,
         plotBorderWidth: 1,
@@ -568,7 +569,7 @@ Highcharts.chart('summer-heatmap', {
     title: {
         text: 'Correlation among the Summer Indicators',
         style: {
-            fontSize: title_font_size
+            fontSize: heatmap_title_font_size
         },
         align: 'center'
     },

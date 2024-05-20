@@ -2,12 +2,12 @@
 html {
     font-size: 10px;
     scroll-behavior: smooth;
-  }
-  
-  /* Create variables */
-  :root {
+}
+
+/* Create variables */
+:root {
     font-size: 10px;
-    font-family: "Open Sans";
+    font-family: "Source Sans Pro";
     --text_color: #333;
     --title_bg_color: #ffffff;
     --first_bg_color: #ffffff;
@@ -20,44 +20,83 @@ html {
     --left_sub_section_bg_color: #ffffff;
     --right_sub_section_bg_color: #ffffff;
     --margin_left: 10rem;
-  }
+}
 
-  /* Global settings */
+/* Global settings */
 body {
     font-size: var(--text_size);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* cite */
+#cite_color a {
+    color: #158cba;
+    text-decoration: none;
   }
 
-  /* -------------------- Nav bar --------------------- */
+/* -------------------- Nav bar --------------------- */
 .topnav {
     overflow: hidden;
     background-color: var(--nav_bar_color);
     position: fixed;
     width: 100%;
     z-index: 1000;
-  }
-  
-  .topnav a {
+}
+
+.topnav a {
     float: left;
     color: #158cba;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: var(--nav_bar_color);
-    color: #158cba;
-  }
-  
-  .topnav a.active {
-    background-color: var(--nav_bar_color);
-    color: #158cba;
-  }
+}
 
-  .references {
-    color: #158cba
-  }
+.topnav a:hover {
+    background-color: var(--nav_bar_color);
+    color: #158cba;
+}
+
+.topnav a.active {
+    background-color: var(--nav_bar_color);
+    color: #158cba;
+}
+
+.references {
+    color: #158cba;
+    text-decoration: none;
+}
+.references:hover {
+    text-decoration: underline;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+.reference_section {
+background-color: var(--title_bg_color);
+color: var(--text_color);
+font-size: var(--title_text_size);
+border-bottom: 2px solid var(--border_color);
+display: flex;
+flex-direction: column;
+height: 100vh;
+justify-content: left;
+align-items: left;
+padding: 10px;
+padding-left: 10px;
+box-sizing: border-box;
+font-size: medium;
+}
+
+main {
+        padding-top: 100px;
+        padding: 30px;
+}
+
+#github_repo {
+    color: #158cba;
+    white-space: nowrap;
+}

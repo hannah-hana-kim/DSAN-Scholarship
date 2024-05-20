@@ -13,6 +13,7 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
     rel="stylesheet"
   />
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <title>Analysis of Natural Bridges National Park</title>
 </head>
 
@@ -49,7 +50,7 @@
 
     <div class="vertical_map_section">
       <div>
-        <h2 style="padding: 1.2rem; padding-top: 1.2rem;">Vegetation Status at Natural Bridge National Park</h2>
+        <h2 style="padding: 1.2rem; padding-top: 1.1rem;">Vegetation Status at Natural Bridge National Park</h2>
       </div>
       <div class="sub_section_map_top">
         <div class = "map_1">
@@ -91,7 +92,7 @@
 
     <div class="vertical_section">
       <div class="sub_section_top">
-        <figure class="highcharts-figure">
+        <figure class="highcharts-figure" id="scatterplot-figure">
           <div id="scatterplot"></div>
           <p class="highcharts-description" align="center">
             [Figure 2]
@@ -103,7 +104,7 @@
           After analyzing the greenery area, I also wanted to deep dive into plant litter variable. This scatter plot shows the relationship between the percentage area of the plant litter and the annual temperature. <br>
 
           According to the <cite id="cite_color">
-          <a href="https://link.springer.com/article/10.1007/s11104-018-3889-x">article: Litter decomposition, effects of temperature driven by soil moisture and vegetation type</a></cite>, the plant litter has both direct and indirect relationship with temperature. 
+          <a href="https://link.springer.com/article/10.1007/s11104-018-3889-x" target="_blank">article: Litter decomposition, effects of temperature driven by soil moisture and vegetation type</a></cite>, the plant litter has both direct and indirect relationship with temperature. 
 
           The article tells us that the temperature will likely to decrease when there are more plant litter. This line chart proves this information. This chart included both historical data and predicted data, and it also predicted that the temperature will decrease in 2024.
         </p>
@@ -112,7 +113,7 @@
 
     <div class="vertical_section">
       <div class="sub_section_top">
-        <figure class="highcharts-figure">
+        <figure class="highcharts-figure" id="barplot-figure">
           <div id="barchart"></div>
           <p class="highcharts-description" align="center">
             [Figure 3]
@@ -120,7 +121,6 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        <h4>Volumetric Water Content by Season</h4>
         <p>
           After deep-diving into the vegetation of the area, I wanted to check out the volumetric water content of the area. This bar chart shows the volumetric water content by season. <br>
           The volumetric water content(VWC) is the amount of water in a given volume of soil. <br>
@@ -134,7 +134,7 @@
 
     <div class="vertical_section">
       <div class="sub_section_top">
-        <figure class="highcharts-figure">
+        <figure class="highcharts-figure" id="linechart_figure">
           <div id="linechart"></div>
           <p class="highcharts-description" align="center">
             [Figure 4]
@@ -168,7 +168,7 @@
     <div class="vertical_map_section">
       <div class="sub_section_map_top">
         <div class = "map_1">
-          <figure class="highcharts-figure">
+          <figure class="highcharts-figure" id="vegetation_heatmap_figure">
             <div id="vegetation-heatmap"></div>
             <p class="highcharts-description" align="center">
               [Figure 8.1]
@@ -176,7 +176,7 @@
           </figure>
         </div>
         <div class = "map_2">
-          <figure class="highcharts-figure">
+          <figure class="highcharts-figure" id="summer_heatmap_figure">
             <div id="summer-heatmap"></div>
             <p class="highcharts-description" align="center">
               [Figure 8.2]
