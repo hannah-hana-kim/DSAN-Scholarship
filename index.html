@@ -77,7 +77,7 @@
       </div>
 
       <div class="sub_section_map_bottom">
-        <p>
+        <p id="first_description">
           Intuitively, I decided to look at the vegetation area of the National Park first. I assumed that the vegetation area would be a good indicator of the environmental status of the park. Since climate change and global warming have strong, negative impacts on vegetation, I thought we would see a decrease in the vegetation area over time.
           <br><br>
           Interestingly, figures 1.1, 1.2, and 1.3 show that the vegetation area in the Park from 1980, 2018, and 2024 (predicted) respectively, changed in unexpected ways. A quick look at the maps above shows slight differences across time; the vegetation in the northeastern part of the park increased, while the center and southern parts decreased. After doing this analysis, I remain interested in knowing why the organization's model (Fig. 1.3) predicts an increase in the northern area. With the environment in its current state, I would have expected to see a decrease in vegetation throughout the whole park.<br><br>
@@ -95,13 +95,15 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        <p>
-          Let's deep dive into the plant litter feater. This scatter plot shows the relationship between the percentage area of the plant litter and the annual temperature. <br>
+        <p id="second_description">
+          The first analysis made me want to deep dive into the plant litter.  <br /><br/>
 
-          According to the <cite id="cite_color">
-          <a href="https://link.springer.com/article/10.1007/s11104-018-3889-x" target="_blank">article: Litter decomposition, effects of temperature driven by soil moisture and vegetation type</a></cite>, the plant litter has both direct and indirect relationship with temperature. 
+          According to the article: <cite id="cite_color">
+          <a href="https://link.springer.com/article/10.1007/s11104-018-3889-x" target="_blank">Litter decomposition, effects of temperature driven by soil moisture and vegetation type</a></cite>, the plant litter has both direct and indirect relationship with temperature. <br /><br />
 
-          The article tells us that the temperature will likely to decrease when there are more plant litter. This line chart proves this information. This chart included both historical data and predicted data, and it also predicted that the temperature will decrease in 2024.
+          Based on this article, my inital assumption was that the plant litter would decrease the temperature of the soil which can also lead to a decrease in the annaul temperature overall. <br />
+
+          Figure 2, which includes both collected and predicted data, shows the relationship between the plant litter and the temperature. The more the plant litter, the less the temperature. This analysis confirmed my assumption, indicating that the retaining plant litter on the ground may be more beneficial for the environment.<br />
         </p>
       </div>
     </div>
@@ -116,19 +118,18 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        <p>
-          After deep-diving into the vegetation of the area, I wanted to check out the volumetric water content of the area. This bar chart shows the volumetric water content by season. <br>
-          The volumetric water content(VWC) is the amount of water in a given volume of soil. <br>
-          Assuming that the evaporation rate is high in the summer, the VWC value was the lowest in the summer and the highest in the water as shown in the plot. <br>
+        <p id="third_description">
+          The second analysis I made from this data is by using the volumetric water content features. Volumetric water content (VWC) is the amount of water in a given volumn of soil. I assumed that the VWC could be related to other indicators. <br />
+          Figure 3 shows the VWC value by season and RCP scenarios. Since the evaporation rate is the highest in the summer, the amount of water in the soil is expected to be the lowest in the summer. <br />
           
-          Interestingly, I initially thought that the VWC would be lower in the predicted data, both on RCP 4.5 and RCP 8.5, but the data shows that the VWC will be higher that the past. This also aligns with the first three map plots, where the vegetation area will be increased (in some parts). 
+          Interestingly, my initial thought was that the VWC would be lower in RCP 4.5 and RCP 8.5 scenario, but Fig. 3 shows that the VWC will be higher than that of the past. This means that the soil will contain more water than the past, which is a good sign for the environment. This also aligns with first analysis.<br />
         
         </p>
       </div>
     </div>
 
     <div class="vertical_section">
-      <div class="sub_section_top">
+      <div class="sub_section_top" id="fourth_figure">
         <figure class="highcharts-figure" id="linechart_figure">
           <div id="linechart"></div>
           <p class="highcharts-description" align="center">
@@ -137,10 +138,12 @@
         </figure>
       </div>
       <div class="sub_section_bottom">
-        <p>
-          After taking a look at the volumetric water content value, I wanted to deep-dive into the summer data. The data gives some indicators of the summer such as number of days of dry soil, evaporation rate, precipitation rate, etc. <br>
-          In this graph, I focused on the trend of the three indicators: Number of days of dry soil, Evaporation rate, Precipitation rate. The data has been normalized since the unit of the indicators were different. From this graph, we can see that the evaporation and precipitation trend were similar, whereas the number of days of dry soil was the opposite. <br>
-          From this graph, we can learn that the more days of dry soil, the less the evaporation rate and precipitation rate. 
+        <p id="fourth_description">
+          Since there are many indicators in the summer data, I wanted to focus on few of the summer indicators: Number of days of dry soil, evaporation, and precipitation before I analyze the relationship with the VWC. <br />
+          <br />
+          I assumed that the trend of evaporation rate and the number of days of dry soil would be the same and the precipitation rate would be the opposite. <br />
+
+          Figure 4 shows the trend of the normalized indicators over the time period, and it shows an interesting result. We can see that the rate of evaporation and the precipitation rate are related, whereas the number of days of dry soil was inversly related. The more the precipitation and the evaporation rate, the less number of days of dry soil. It can also be said that the rate of precipitation has more impact on the dry soil than that of the evaporation. <br />
        </p>
       </div>
     </div>
@@ -150,40 +153,41 @@
         <div class="flourish-embed flourish-radar" data-src="visualisation/17966848">
           <script src="https://public.flourish.studio/resources/embed.js">
           </script>
+          <p>[Figure 5]</p>
         </div>
       </div>
-      <div class="sub_section_right">
-        Now, I wanted to zoom out a little bit, and see the relationships among the five indicators in the summer. This graph also includes the predicted data from 2021 and 2024. <br>
-        Overall, I could see a relationship between the evaporation rate and the volumetric water content value. The higher the evaporation rate, the lower the VWC value. Also, there was a relationship found between the number of days with dry soil and the precipitation rate. The higher the precipitation rate, the less the number of days with dry soil.
-        <br>
-        Interestingly, the predicted data from 2021 to 2024 did not reflect this analysis that well. Throughout 4 years, it was difficult to figure out the relationships that we found from the historical data. </div>
+      <div class="sub_section_right" id="fifth_description">
+        Zooming out a little bit, I wanted to take a look at more summer indicators, since the analysis above was interesting.  <br><br>
+        Figure 5 has six indicators: number of days with dry soil, evaporation, non-dry soil water, precipitation, maximum temperature, and volumetric water content. <br /> The historical data showed that the volumetric water content is mainly effected by evaporation rate. The higher the evaporation rate, the lower the VWC value. Also, we could find the relationship between the number of days with dry soil and the precipitation rate. The higher the precipitation rate, the less the number of days with dry soil. <br /><br />
+        
+        Interestingly, the predicted data from 2021 to 2024 did not apply this analysis that well. Throughout 4 years, it was difficult to figure out the relationships that we found from the historical data. </div>
     </div>
 
 
     <div class="vertical_map_section">
-      <div class="sub_section_map_top">
-        <div class = "map_1">
+      <div class="heatmap_figures_top">
+        <div class = "heatmap_1">
           <figure class="highcharts-figure" id="vegetation_heatmap_figure">
             <div id="vegetation-heatmap"></div>
             <p class="highcharts-description" align="center">
-              [Figure 8.1]
+              [Figure 6.1]
             </p>
           </figure>
         </div>
-        <div class = "map_2">
+        <div class = "heatmap_2">
           <figure class="highcharts-figure" id="summer_heatmap_figure">
             <div id="summer-heatmap"></div>
             <p class="highcharts-description" align="center">
-              [Figure 8.2]
+              [Figure 6.2]
             </p>
           </figure>
         </div>
       </div>
-      <div class="sub_section_map_bottom" id="heatmap_description">
-        <h4>Data Prediction</h4>
-        <p>
-          I wondered if we can predict the data based on the previous analysis. I wanted to see how better or worse will the climate will change. Unfortunately, the vegetation data and the summer indicators barely had any correlation with RCP. <br>
-          This can explain why the predicted data from 2021 to 2024 did not reflect the historical data that well. <br>
+      <div class="sub_section_map_bottom">
+        <p id="heatmap_description">
+          Based on the analysis above, I wanted to know whether we can predict the future climate of the National Park. <br />
+          Figures 6.1 and 6.2 show the correlation of the vegetation data and the summer indicators. Since the prediction is based on the RCP scenarios, I assumed that the features would have strong correlation with the RCP and scenario feature. <br /><br />
+          However, both data barely had a strong correlation with the RCP and scenario feature. Considering that the 
         </p> 
       </div>
     </div>

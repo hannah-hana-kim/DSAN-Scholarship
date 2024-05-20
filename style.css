@@ -84,7 +84,9 @@ body {
   padding: 10rem;
   box-sizing: border-box;
   padding-top: 0rem;
-  font-size: 2rem;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 2.2rem;
 }
 
 /* Formatting the first section */
@@ -251,11 +253,11 @@ body {
   color: var(--text_color);
   font-size: var(--text_size);
   border-bottom: 2px solid var(--border_color);
-  display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 /* Formatting the upper section */
@@ -263,7 +265,6 @@ body {
   background-color: var(--left_sub_section_bg_color);
   width: 100%;
   height: 70%;
-  display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
@@ -284,17 +285,18 @@ body {
   padding-right: 15%;
 }
 
-#heatmap_description {
-  height: 30%
-}
-
 /* --------------------- Figures --------------------- */
 #scatterplot, #barchart, #linechart {
   justify-content: center;
+  display: flex;
   align-items: center;
   width: 100%;
-  height: 600px;
+  height: 400px;
   margin: 0 auto;
+}
+
+#fourth_figure {
+  height: 75%;
 }
 
 .text {
@@ -413,7 +415,6 @@ body {
 /* Bar Graph */
 
 #barchart {
-  height: 600px;
   width: 800px;
   margin: 0 auto;
 }
@@ -467,8 +468,8 @@ body {
 
 /* Line Graph */
 #linechart {
-  height: 500px;
   width: 800px;
+  height: 500px;
   margin: 0 auto;
 }
 
@@ -675,4 +676,71 @@ body {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/*--------------------- Description ----------------------------*/
+#first_description {
+  font-size: 1.8rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#second_description {
+  font-size: 1.8rem;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0;
+}
+
+#third_description {
+  font-size: 1.8rem;
+  padding-top: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0;
+}
+
+#fourth_description {
+  font-size: 1.8rem;
+  padding-top: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0;
+}
+
+#fifth_description {
+  font-size: 2rem;
+  padding-top: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0;
+}
+
+#heatmap_description {
+  font-size: 1.8rem;
+  padding-top: 0;
+  margin-top:0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0;
+}
+
+/* --------------------- Heatmap --------------------- */
+.heatmap_1,
+.heatmap_2 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heatmap_figures_top {
+  background-color: var(--left_sub_section_bg_color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  box-sizing: border-box;
 }
