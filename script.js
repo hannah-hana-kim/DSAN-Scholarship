@@ -1,4 +1,5 @@
 // variables
+const font_family = 'Source Sans Pro';
 const title_font_size = '2.2em';
 const heatmap_title_font_size = '2em';
 const subtitle_font_size = '1.8em';
@@ -6,6 +7,7 @@ const axis_label_font_size = '1.5em';
 const axis_tick_label_font_size = '1.3em';
 const legend_item_font_size = '1.3em';
 const tooltip_font_size = '1.3em';
+const series_font_size = '1.3em';
 
 const scatters_color = '#eda4bd';
 const line_color = '#7d1128';
@@ -97,6 +99,7 @@ Highcharts.chart('scatterplot', {
         align: 'left',
         style: {
             fontSize: title_font_size,
+            fontFamily: font_family
         }
     },
     xAxis: {
@@ -106,11 +109,13 @@ Highcharts.chart('scatterplot', {
         	text: 'Plant Litter (%)',
             style: {
                 fontSize: axis_label_font_size,
+                fontFamily: font_family
             }
         },
         labels: {
             style: {
                 fontSize: axis_tick_label_font_size,
+                fontFamily: font_family
             }
         }
     },
@@ -120,11 +125,13 @@ Highcharts.chart('scatterplot', {
         	text: 'Annual Temperature (°C)',
             style: {
                 fontSize: axis_label_font_size,
+                fontFamily: font_family
             }
         },
         labels: {
             style: {
                 fontSize: axis_tick_label_font_size,
+                fontFamily: font_family
             }
         }
     },
@@ -136,10 +143,21 @@ Highcharts.chart('scatterplot', {
     tooltip: {
         style: {
             fontSize: tooltip_font_size,
+            fontFamily: font_family
         },
         formatter: function() {
-            return '<b>Annual Temperature:</b> ' + this.y + '°C<br>' +
-                   '<b>Plant Litter:</b> ' + this.x + '%';
+            return '<b>Annual Temperature:</b> ' + this.y.toFixed(3) + '°C<br>' +'<b>Plant Litter:</b> ' + this.x + '%';
+        }
+    },
+    plotOptions: {
+        series: {
+            label: {
+                style: {
+                    fontSize: series_font_size,
+
+                    fontFamily: font_family
+                }
+            }
         }
     },
     series: [{
@@ -155,7 +173,7 @@ Highcharts.chart('scatterplot', {
                 lineWidth: 2
             }
         },
-        enableMouseTracking: false
+        enableMouseTracking: true
     }, {
         type: 'scatter',
         name: 'Plant Litter',
@@ -181,6 +199,7 @@ Highcharts.chart('barchart', {
       align: 'left',
         style: {
             fontSize: title_font_size,
+            fontFamily: font_family
         }
   },
   xAxis: {
@@ -189,11 +208,13 @@ Highcharts.chart('barchart', {
           text: 'Season',
           style: {
             fontSize: axis_label_font_size,
+            fontFamily: font_family
           }
       },
       labels: {
         style: {
             fontSize: axis_tick_label_font_size,
+            fontFamily: font_family
         }
       },
       gridLineWidth: 1,
@@ -211,6 +232,7 @@ Highcharts.chart('barchart', {
         overflow: 'justify',
         style: {
             fontSize: axis_tick_label_font_size,
+            fontFamily: font_family
         }
       },
       gridLineWidth: 0
@@ -219,6 +241,7 @@ Highcharts.chart('barchart', {
       valueSuffix: '',
         style: {
             fontSize: tooltip_font_size,
+            fontFamily: font_family
         }
   },
   plotOptions: {
@@ -243,6 +266,7 @@ Highcharts.chart('barchart', {
     shadow: true,
     itemStyle: {
         fontSize: legend_item_font_size,
+        fontFamily: font_family
     }
   },
   credits: {
@@ -330,6 +354,7 @@ Highcharts.chart('linechart', {
     align: 'left',
     style: {
         fontSize: title_font_size,
+        fontFamily: font_family
     }
   },
   subtitle: {
@@ -337,6 +362,7 @@ Highcharts.chart('linechart', {
     align: 'left',
     style: {
         fontSize: subtitle_font_size,
+        fontFamily: font_family
     }
   },
   xAxis: {
@@ -344,6 +370,7 @@ Highcharts.chart('linechart', {
         text: 'Year',
         style: {
             fontSize: axis_label_font_size,
+            fontFamily: font_family
         }
       },
       categories: data.map(item => item[0].toString()), // Use year as categories
@@ -353,6 +380,7 @@ Highcharts.chart('linechart', {
       labels: {
         style: {
             fontSize: axis_tick_label_font_size,
+            fontFamily: font_family
         }
       }
 
@@ -362,11 +390,13 @@ Highcharts.chart('linechart', {
         text: 'Normalized Value of the Indicators',
         style: {
             fontSize: axis_label_font_size,
+            fontFamily: font_family
         }
       },
       labels: {
         style: {
             fontSize: axis_tick_label_font_size,
+            fontFamily: font_family
         }
       },
       minorGridLineWidth: 0,
@@ -377,12 +407,14 @@ Highcharts.chart('linechart', {
   legend: {
     itemStyle: {
         fontSize: legend_item_font_size,
+        fontFamily: font_family
     },
   },
   tooltip: {
     valueSuffix: '',
     style: {
         fontSize: tooltip_font_size,
+        fontFamily: font_family
     }
   },
   plotOptions: {
@@ -420,10 +452,8 @@ Highcharts.chart('linechart', {
 });
 
 //////////////////// Vegetation Heatmap ////////////////////////
-
 // Substring template helper for the responsive labels
-Highcharts.Templating.helpers.substr = (s, from, length) =>
-    s.substr(from, length);
+Highcharts.Templating.helpers.substr = (s, from, length) => s.substr(from, length);
 
 // Create the chart
 Highcharts.chart('vegetation-heatmap', {
@@ -442,170 +472,42 @@ Highcharts.chart('vegetation-heatmap', {
         text: 'Correlation among the Vegetation Indicators',
         align: 'center',
         style: {
-            fontSize: heatmap_title_font_size
+            fontSize: heatmap_title_font_size,
+            fontFamily: font_family
         }
     },
 
     xAxis: {
-        categories: ['Longitude', 'Latitude', 'Year', 'RCP', 'Tree Canopy', 'Bare', 'Herb', 'Annual Herb', 'Litter', 'Shrub'],
+        categories: ['RCP', 'Scenario', 'Annual Temp', 'Tree Canopy', 'Annual Herb', 'Bare', 'Herb', 'Litter', 'Shrub'],
         title: {
-            text: 'Indicators of Summer',
+            text: 'Indicators of Vegetation',
             style: {
-                fontSize: axis_label_font_size
+                fontSize: axis_label_font_size,
+                fontFamily: font_family
             }
         },
         labels: {
             style: {
-                fontSize: axis_tick_label_font_size
+                fontSize: axis_tick_label_font_size,
+                fontFamily: font_family
             }
         }
     },
 
     yAxis: {
-        categories: ['Longitude', 'Latitude', 'Year', 'RCP', 'Tree Canopy', 'Bare', 'Herb', 'Annual Herb', 'Litter', 'Shrub'],
+        categories: ['RCP', 'Scenario', 'Annual Temp', 'Tree Canopy', 'Annual Herb', 'Bare', 'Herb', 'Litter', 'Shrub'],
         title: {
-            text: 'Indicators of Summer',
+            text: 'Indicators of Vegetation',
             style: {
-                fontSize: axis_label_font_size
+                fontSize: axis_label_font_size,
+                fontFamily: font_family
             }
         },
         reversed: true,
         labels: {
             style: {
-                fontSize: axis_tick_label_font_size
-            }
-        }
-    },
-
-    accessibility: {
-        point: {
-            descriptionFormat: '{(add index 1)}. ' +
-                '{series.xAxis.categories.(x)} sales ' +
-                '{series.yAxis.categories.(y)}, {value}.'
-        }
-    },
-
-    colorAxis: {
-        min: -1,
-        minColor: '#ffffff',
-        maxColor: heatmap_max_color,
-        reversed: false
-    },
-
-    legend: {
-        align: 'right',
-        layout: 'vertical',
-        margin: 0,
-        verticalAlign: 'top',
-        y: 25,
-        symbolHeight: 280,
-        itemStyle: {
-            fontSize: legend_item_font_size
-        }
-    },
-
-    tooltip: {
-        formatter: function() {
-            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b><br>' +
-                   '<b>' + this.series.yAxis.categories[this.point.y] + '</b><br>' +
-                   '<b>' + this.point.value.toFixed(3) + '</b><br>';
-        },
-        style: {
-            fontSize: tooltip_font_size
-        }
-    },
-
-    series: [{
-        name: 'Correlation matrix',
-        borderWidth: 1,
-        data: [
-            [0, 0, 1.000], [0, 1, 0.518], [0, 2, -0.010], [0, 3, 0.209], [0, 4, 0.168], [0, 5, -0.289], [0, 6, 0.087], [0, 7, 0.036], [0, 8, 0.296], [0, 9, 0.221],
-            [1, 0, 0.518], [1, 1, 1.000], [1, 2, -0.007], [1, 3, 0.105], [1, 4, -0.092], [1, 5, -0.133], [1, 6, -0.032], [1, 7, 0.041], [1, 8, 0.274], [1, 9, 0.072],
-            [2, 0, -0.010], [2, 1, -0.007], [2, 2, 1.000], [2, 3, 0.626], [2, 4, -0.013], [2, 5, 0.011], [2, 6, -0.006], [2, 7, -0.003], [2, 8, -0.003], [2, 9, -0.007],
-            [3, 0, 0.209], [3, 1, 0.105], [3, 2, 0.626], [3, 3, 1.000], [3, 4, 0.020], [3, 5, -0.035], [3, 6, 0.011], [3, 7, -0.028], [3, 8, 0.039], [3, 9, 0.026],
-            [4, 0, 0.168], [4, 1, -0.092], [4, 2, -0.013], [4, 3, 0.020], [4, 4, 1.000], [4, 5, -0.403], [4, 6, 0.303], [4, 7, -0.138], [4, 8, 0.146], [4, 9, 0.396],
-            [5, 0, -0.289], [5, 1, -0.133], [5, 2, 0.011], [5, 3, -0.035], [5, 4, -0.403], [5, 5, 1.000], [5, 6, -0.696], [5, 7, -0.276], [5, 8, -0.836], [5, 9, -0.915],
-            [6, 0, 0.087], [6, 1, -0.032], [6, 2, -0.006], [6, 3, 0.011], [6, 4, 0.303], [6, 5, -0.696], [6, 6, 1.000], [6, 7, 0.186], [6, 8, 0.485], [6, 9, 0.617],
-            [7, 0, 0.036], [7, 1, 0.041], [7, 2, -0.003], [7, 3, -0.028], [7, 4, -0.138], [7, 5, -0.276], [7, 6, 0.186], [7, 7, 1.000], [7, 8, 0.279], [7, 9, 0.336],
-            [8, 0, 0.296], [8, 1, 0.274], [8, 2, -0.003], [8, 3, 0.039], [8, 4, 0.146], [8, 5, -0.836], [8, 6, 0.485], [8, 7, 0.279], [8, 8, 1.000], [8, 9, 0.803],
-            [9, 0, 0.221], [9, 1, 0.072], [9, 2, -0.007], [9, 3, 0.026], [9, 4, 0.396], [9, 5, -0.915], [9, 6, 0.617], [9, 7, 0.336], [9, 8, 0.803], [9, 9, 1.000]
-        ],
-        dataLabels: {
-            enabled: true,
-            color: '#000000'
-        }
-    }],
-
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 500
-            },
-            chartOptions: {
-                yAxis: {
-                    labels: {
-                        format: '{substr value 0 1}'
-                    }
-                }
-            }
-        }]
-    }
-
-});
-
-//////////////////////////// Summer Heatmap ////////////////////////////
-// Create the chart
-Highcharts.chart('summer-heatmap', {
-    chart: {
-        type: 'heatmap',
-        width: 500,
-        height: 500,
-        marginTop: 40,
-        marginBottom: 80,
-        plotBorderWidth: 1,
-        backgroundColor: 'transparent',
-    },
-
-    title: {
-        text: 'Correlation among the Summer Indicators',
-        style: {
-            fontSize: heatmap_title_font_size
-        },
-        align: 'center'
-    },
-
-    xAxis: {
-        categories: [
-            'Longitude', 'Latitude', 'Year', 'RCP', 'Dry Soil Days', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
-        ],
-        title: {
-            text: 'Indicators of Summer',
-            style: {
-                fontSize: axis_label_font_size
-            }
-        },
-        labels: {
-            style: {
-                fontSize: axis_tick_label_font_size
-            }
-        }
-    },
-
-    yAxis: {
-        categories: [
-            'Longitude', 'Latitude', 'Year', 'RCP', 'Dry Soil Days', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
-        ],
-        reversed: true,
-        title: {
-            text: 'Indicators of Summer',
-            style: {
-                fontSize: axis_label_font_size
-            }
-        },
-       
-        labels: {
-            style: {
-                fontSize: axis_tick_label_font_size
+                fontSize: axis_tick_label_font_size,
+                fontFamily: font_family
             }
         }
     },
@@ -632,7 +534,146 @@ Highcharts.chart('summer-heatmap', {
         y: 25,
         symbolHeight: 280,
         itemStyle: {
-            fontSize: legend_item_font_size
+            fontSize: legend_item_font_size,
+            fontFamily: font_family
+        }
+    },
+
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b><br>' +
+                   '<b>' + this.series.yAxis.categories[this.point.y] + '</b><br>' +
+                   '<b>' + this.point.value.toFixed(3) + '</b><br>';
+        },
+        style: {
+            fontSize: tooltip_font_size,
+            fontFamily: font_family
+        }
+    },
+
+    series: [{
+        name: 'Correlation matrix',
+        borderWidth: 1,
+        data: [
+            [0, 0, 1.000], [0, 1, 0.904], [0, 2, 0.044], [0, 3, -0.014], [0, 4, -0.001], [0, 5, 0.009], [0, 6, -0.004], [0, 7, -0.002], [0, 8, -0.007],
+            [1, 0, 0.904], [1, 1, 1.000], [1, 2, 0.037], [1, 3, -0.011], [1, 4, -0.001], [1, 5, 0.008], [1, 6, -0.003], [1, 7, -0.003], [1, 8, -0.007],
+            [2, 0, 0.044], [2, 1, 0.037], [2, 2, 1.000], [2, 3, -0.001], [2, 4, -0.007], [2, 5, 0.014], [2, 6, -0.005], [2, 7, -0.017], [2, 8, -0.010],
+            [3, 0, -0.014], [3, 1, -0.011], [3, 2, -0.001], [3, 3, 1.000], [3, 4, -0.138], [3, 5, -0.403], [3, 6, 0.303], [3, 7, 0.146], [3, 8, 0.396],
+            [4, 0, -0.001], [4, 1, -0.001], [4, 2, -0.007], [4, 3, -0.138], [4, 4, 1.000], [4, 5, -0.276], [4, 6, 0.186], [4, 7, 0.279], [4, 8, 0.336],
+            [5, 0, 0.009], [5, 1, 0.008], [5, 2, 0.014], [5, 3, -0.403], [5, 4, -0.276], [5, 5, 1.000], [5, 6, -0.696], [5, 7, -0.836], [5, 8, -0.915],
+            [6, 0, -0.004], [6, 1, -0.003], [6, 2, -0.005], [6, 3, 0.303], [6, 4, 0.186], [6, 5, -0.696], [6, 6, 1.000], [6, 7, 0.485], [6, 8, 0.617],
+            [7, 0, -0.002], [7, 1, -0.003], [7, 2, -0.017], [7, 3, 0.146], [7, 4, 0.279], [7, 5, -0.836], [7, 6, 0.485], [7, 7, 1.000], [7, 8, 0.803],
+            [8, 0, -0.007], [8, 1, -0.007], [8, 2, -0.010], [8, 3, 0.396], [8, 4, 0.336], [8, 5, -0.915], [8, 6, 0.617], [8, 7, 0.803], [8, 8, 1.000]
+        ],
+        dataLabels: {
+            enabled: true,
+            color: '#000000'
+        }
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                yAxis: {
+                    labels: {
+                        formatter: function() {
+                            return this.value.substr(0, 1);
+                        }
+                    }
+                }
+            }
+        }]
+    }
+});
+
+//////////////////////////// Summer Heatmap ////////////////////////////
+// Create the chart
+Highcharts.chart('summer-heatmap', {
+    chart: {
+        type: 'heatmap',
+        width: 500,
+        height: 500,
+        marginTop: 40,
+        marginBottom: 80,
+        plotBorderWidth: 1,
+        backgroundColor: 'transparent',
+    },
+
+    title: {
+        text: 'Correlation among the Summer Indicators',
+        style: {
+            fontSize: heatmap_title_font_size,
+            fontFamily: font_family
+        },
+        align: 'center'
+    },
+
+    xAxis: {
+        categories: [
+            'RCP', 'Dry Soil Days', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
+        ],
+        title: {
+            text: 'Indicators of Summer',
+            style: {
+                fontSize: axis_label_font_size,
+                fontFamily: font_family
+            }
+        },
+        labels: {
+            style: {
+                fontSize: axis_tick_label_font_size,
+                fontFamily: font_family
+            }
+        }
+    },
+
+    yAxis: {
+        categories: [
+            'RCP', 'Dry Soil Days', 'Evaporation', 'Non-Dry SWA', 'Precipitation', 'Max Temp', 'VWC'
+        ],
+        reversed: true,
+        title: {
+            text: 'Indicators of Summer',
+            style: {
+                fontSize: axis_label_font_size,
+                fontFamily: font_family
+            }
+        },
+        labels: {
+            style: {
+                fontSize: axis_tick_label_font_size,
+                fontFamily: font_family
+            }
+        }
+    },
+
+    accessibility: {
+        point: {
+            descriptionFormat: '{(add index 1)}. {series.xAxis.categories.[point.x]} and {series.yAxis.categories.[point.y]}: {point.value}.'
+        }
+    },
+
+    colorAxis: {
+        min: -1,
+        max: 1,
+        reversed: false,
+        minColor: '#ffffff',
+        maxColor: heatmap_max_color
+    },
+
+    legend: {
+        align: 'right',
+        layout: 'vertical',
+        margin: 0,
+        verticalAlign: 'top',
+        y: 25,
+        symbolHeight: 280,
+        itemStyle: {
+            fontSize: legend_item_font_size,
+            fontFamily: font_family
         }
     },
 
@@ -643,7 +684,8 @@ Highcharts.chart('summer-heatmap', {
                    '<b>' + this.point.value + '</b><br>';
         },
         style: {
-            fontSize: tooltip_font_size
+            fontSize: tooltip_font_size,
+            fontFamily: font_family
         }
     },
 
@@ -651,16 +693,13 @@ Highcharts.chart('summer-heatmap', {
         name: 'Correlation values',
         borderWidth: 1,
         data: [
-            [0, 0, 1.000], [0, 1, 0.518], [0, 2, -0.010], [0, 3, -0.013], [0, 4, -0.021], [0, 5, 0.051], [0, 6, 0.187], [0, 7, 0.077], [0, 8, -0.197], [0, 9, 0.502],
-            [1, 0, 0.518], [1, 1, 1.000], [1, 2, -0.007], [1, 3, -0.007], [1, 4, 0.013], [1, 5, 0.028], [1, 6, 0.165], [1, 7, 0.066], [1, 8, -0.191], [1, 9, 0.320],
-            [2, 0, -0.010], [2, 1, -0.007], [2, 2, 1.000], [2, 3, 0.703], [2, 4, 0.001], [2, 5, -0.073], [2, 6, 0.042], [2, 7, -0.019], [2, 8, 0.268], [2, 9, 0.013],
-            [3, 0, -0.013], [3, 1, -0.007], [3, 2, 0.703], [3, 3, 1.000], [3, 4, -0.004], [3, 5, -0.038], [3, 6, 0.036], [3, 7, 0.003], [3, 8, 0.250], [3, 9, 0.011],
-            [4, 0, -0.021], [4, 1, 0.013], [4, 2, 0.001], [4, 3, -0.004], [4, 4, 1.000], [4, 5, -0.083], [4, 6, -0.071], [4, 7, 0.001], [4, 8, -0.002], [4, 9, 0.016],
-            [5, 0, 0.051], [5, 1, 0.028], [5, 2, -0.073], [5, 3, -0.038], [5, 4, -0.083], [5, 5, 1.000], [5, 6, 0.352], [5, 7, 0.014], [5, 8, -0.004], [5, 9, 0.227],
-            [6, 0, 0.187], [6, 1, 0.165], [6, 2, 0.042], [6, 3, 0.036], [6, 4, -0.071], [6, 5, 0.352], [6, 6, 1.000], [6, 7, 0.004], [6, 8, -0.002], [6, 9, 0.521],
-            [7, 0, 0.077], [7, 1, 0.066], [7, 2, -0.019], [7, 3, 0.003], [7, 4, 0.001], [7, 5, 0.014], [7, 6, 0.004], [7, 7, 1.000], [7, 8, -0.258], [7, 9, 0.005],
-            [8, 0, -0.197], [8, 1, -0.191], [8, 2, 0.268], [8, 3, 0.250], [8, 4, -0.002], [8, 5, -0.004], [8, 6, -0.002], [8, 7, -0.258], [8, 8, 1.000], [8, 9, -0.003],
-            [9, 0, 0.502], [9, 1, 0.320], [9, 2, 0.013], [9, 3, 0.011], [9, 4, 0.016], [9, 5, 0.227], [9, 6, 0.521], [9, 7, 0.005], [9, 8, -0.003], [9, 9, 1.000]
+            [0, 0, 1.000], [0, 1, -0.004], [0, 2, -0.038], [0, 3, 0.036], [0, 4, 0.003], [0, 5, 0.250], [0, 6, 0.011],
+            [1, 0, -0.004], [1, 1, 1.000], [1, 2, -0.083], [1, 3, -0.071], [1, 4, 0.001], [1, 5, -0.002], [1, 6, 0.016],
+            [2, 0, -0.038], [2, 1, -0.083], [2, 2, 1.000], [2, 3, 0.352], [2, 4, 0.014], [2, 5, -0.004], [2, 6, 0.227],
+            [3, 0, 0.036], [3, 1, -0.071], [3, 2, 0.352], [3, 3, 1.000], [3, 4, 0.004], [3, 5, -0.002], [3, 6, 0.521],
+            [4, 0, 0.003], [4, 1, 0.001], [4, 2, 0.014], [4, 3, 0.004], [4, 4, 1.000], [4, 5, -0.258], [4, 6, 0.005],
+            [5, 0, 0.250], [5, 1, -0.002], [5, 2, -0.004], [5, 3, -0.002], [5, 4, -0.258], [5, 5, 1.000], [5, 6, -0.003],
+            [6, 0, 0.011], [6, 1, 0.016], [6, 2, 0.227], [6, 3, 0.521], [6, 4, 0.005], [6, 5, -0.003], [6, 6, 1.000]
         ],
         dataLabels: {
             enabled: true,

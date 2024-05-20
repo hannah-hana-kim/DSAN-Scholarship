@@ -284,6 +284,10 @@ body {
   padding-right: 15%;
 }
 
+#heatmap_description {
+  height: 30%
+}
+
 /* --------------------- Figures --------------------- */
 #scatterplot, #barchart, #linechart {
   justify-content: center;
