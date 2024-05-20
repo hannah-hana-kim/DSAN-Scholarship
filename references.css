@@ -1,0 +1,63 @@
+/* Set the root font to 10 */
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  /* Create variables */
+  :root {
+    font-size: 10px;
+    font-family: "Open Sans";
+    --text_color: #333;
+    --title_bg_color: #ffffff;
+    --first_bg_color: #ffffff;
+    --bg_color: #ffffff;
+    --nav_bar_color: #f0f0f0;
+    --text_size: 1.6rem;
+    --title_text_size: 3.2rem;
+    --header_text_size: 2.4rem;
+    --border_color: #f0f0f0;
+    --left_sub_section_bg_color: #ffffff;
+    --right_sub_section_bg_color: #ffffff;
+    --margin_left: 10rem;
+  }
+
+  /* Global settings */
+body {
+    font-size: var(--text_size);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* -------------------- Nav bar --------------------- */
+.topnav {
+    overflow: hidden;
+    background-color: var(--nav_bar_color);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #158cba;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: var(--nav_bar_color);
+    color: #158cba;
+  }
+  
+  .topnav a.active {
+    background-color: var(--nav_bar_color);
+    color: #158cba;
+  }
+
+  .references {
+    color: #158cba
+  }

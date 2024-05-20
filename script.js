@@ -18,7 +18,7 @@ const color_1980 = '#6b7fd7';
 const color_2018 = '#eb7bc0';
 const color_2024 = '#4c2a85';
 
-const heatmap_max_color = '#04aa6d'
+const heatmap_max_color = '#158cba'
 
 // Scatterplot with regression line
 const dataset = [
@@ -89,7 +89,7 @@ Highcharts.chart('scatterplot', {
     chart: {
       backgroundColor: 'transparent',
       width: 800,
-      height: 600,
+      height: 400,
     },
     title: {
         text: 'Relationship between the Plant Litter and Annual Temperature',
@@ -173,6 +173,7 @@ Highcharts.chart('barchart', {
   chart: {
       type: 'bar',
       backgroundColor: 'transparent',
+      height: 400,
   },
   title: {
       text: 'Volumetric Water Content by Season and RCP',
@@ -214,7 +215,10 @@ Highcharts.chart('barchart', {
       gridLineWidth: 0
   },
   tooltip: {
-      valueSuffix: ''
+      valueSuffix: '',
+        style: {
+            fontSize: tooltip_font_size,
+        }
   },
   plotOptions: {
       bar: {
